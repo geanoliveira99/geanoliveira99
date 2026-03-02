@@ -165,15 +165,15 @@ const gean = {
 ---
 
 <details open>
-<summary><img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="20"/> &nbsp;<b>ERP Sankhya — Abr 2024 – Atual</b></summary>
+<summary><img src="sankhya.png" height="20"/> &nbsp;<b>ERP Sankhya — Abr 2024 – Atual</b></summary>
 <br/>
 
 | | |
 |:---|:---|
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Customizações** | Telas personalizadas no Sankhya Navegador |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Relatórios** | Geração e personalização de relatórios |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **API Sankhya** | Integração via API REST do Sankhya |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Suporte** | Atendimento a usuários e implantação do sistema |
+| <img src="sankhya.png" height="16"/> **Customizações** | Telas personalizadas no Sankhya Navegador |
+| <img src="sankhya.png" height="16"/> **Relatórios** | Geração e personalização de relatórios |
+| <img src="sankhya.png" height="16"/> **API Sankhya** | Integração via API REST do Sankhya |
+| <img src="sankhya.png" height="16"/> **Suporte** | Atendimento a usuários e implantação do sistema |
 
 </details>
 
@@ -195,15 +195,15 @@ const gean = {
 ---
 
 <details open>
-<summary><img src="https://skillicons.dev/icons?i=oracle&theme=dark" width="20"/> &nbsp;<b>Oracle SQL — Abr 2024 – Atual</b></summary>
+<summary><img src="oracle.png" height="20"/> &nbsp;<b>Oracle SQL — Abr 2024 – Atual</b></summary>
 <br/>
 
 | | |
 |:---|:---|
-| <img src="https://skillicons.dev/icons?i=oracle&theme=dark" width="16"/> **Queries Complexas** | Joins, subqueries, CTEs e window functions |
-| <img src="https://skillicons.dev/icons?i=oracle&theme=dark" width="16"/> **PL/SQL** | Procedures, functions e packages |
-| <img src="https://skillicons.dev/icons?i=oracle&theme=dark" width="16"/> **Performance** | Otimização de índices e planos de execução |
-| <img src="https://skillicons.dev/icons?i=oracle&theme=dark" width="16"/> **Integração** | Conexão direta com ERP Sankhya via Oracle |
+| <img src="oracle.png" height="16"/> **Queries Complexas** | Joins, subqueries, CTEs e window functions |
+| <img src="oracle.png" height="16"/> **PL/SQL** | Procedures, functions e packages |
+| <img src="oracle.png" height="16"/> **Performance** | Otimização de índices e planos de execução |
+| <img src="oracle.png" height="16"/> **Integração** | Conexão direta com ERP Sankhya via Oracle |
 
 </details>
 
