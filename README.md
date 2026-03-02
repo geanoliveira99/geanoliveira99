@@ -17,6 +17,13 @@
 
 ---
 
+<!-- Marquee infinito de tecnologias -->
+<div align="center">
+<img src="linguagensprogramacao.png" width="100%" style="display:block"/>
+</div>
+
+---
+
 <div align="center">
 
 ### 🐍 Snake comendo minhas contribuições...
@@ -105,15 +112,15 @@ const gean = {
 ---
 
 <details open>
-<summary><img src="https://skillicons.dev/icons?i=apple&theme=dark" width="20"/> &nbsp;<b>iOS Developer — Abr 2024 – Atual</b></summary>
+<summary><img src="xcode.png" height="20"/> &nbsp;<b>iOS Developer — Abr 2024 – Atual</b></summary>
 <br/>
 
 | | |
 |:---|:---|
-| <img src="https://skillicons.dev/icons?i=apple&theme=dark" width="16"/> **Xcode** | Desenvolvimento com simuladores iOS/iPadOS |
-| <img src="https://skillicons.dev/icons?i=apple&theme=dark" width="16"/> **Capacitor** | Build iOS de apps web com bridge nativa |
-| <img src="https://skillicons.dev/icons?i=apple&theme=dark" width="16"/> **TestFlight** | Testes beta e distribuição interna |
-| <img src="https://skillicons.dev/icons?i=apple&theme=dark" width="16"/> **App Store** | Preparação de apps para publicação |
+| <img src="xcode.png" height="16"/> **Xcode** | Desenvolvimento com simuladores iOS/iPadOS |
+| <img src="xcode.png" height="16"/> **Capacitor** | Build iOS de apps web com bridge nativa |
+| <img src="xcode.png" height="16"/> **TestFlight** | Testes beta e distribuição interna |
+| <img src="xcode.png" height="16"/> **App Store** | Preparação de apps para publicação |
 
 </details>
 
@@ -135,30 +142,30 @@ const gean = {
 ---
 
 <details open>
-<summary><img src="https://skillicons.dev/icons?i=js&theme=dark" width="20"/> &nbsp;<b>Capacitor / WebView — Abr 2024 – Atual</b></summary>
+<summary><img src="capacitor.svg" height="20"/> &nbsp;<b>Capacitor / WebView — Abr 2024 – Atual</b></summary>
 <br/>
 
 | | |
 |:---|:---|
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Apps Híbridos** | Capacitor para Android e iOS com uma só base de código |
-| <img src="https://skillicons.dev/icons?i=js&theme=dark" width="16"/> **Bridge JS/Native** | Acesso a funcionalidades nativas via JavaScript |
-| <img src="https://skillicons.dev/icons?i=js&theme=dark" width="16"/> **Plugins Custom** | Câmera, GPS, notificações push customizadas |
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **Build & Signing** | Geração e assinatura para ambas as plataformas |
+| <img src="capacitor.svg" height="16"/> **Apps Híbridos** | Capacitor para Android e iOS com uma só base de código |
+| <img src="capacitor.svg" height="16"/> **Bridge JS/Native** | Acesso a funcionalidades nativas via JavaScript |
+| <img src="capacitor.svg" height="16"/> **Plugins Custom** | Câmera, GPS, notificações push customizadas |
+| <img src="capacitor.svg" height="16"/> **Build & Signing** | Geração e assinatura para ambas as plataformas |
 
 </details>
 
 ---
 
 <details open>
-<summary><img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="20"/> &nbsp;<b>Google Play Console — Abr 2024 – Atual</b></summary>
+<summary><img src="googleplayconsole.jpg" height="20"/> &nbsp;<b>Google Play Console — Abr 2024 – Atual</b></summary>
 <br/>
 
 | | |
 |:---|:---|
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Assinatura** | Geração e gestão de chave APK/AAB |
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Publicação** | Upload, review e publicação de apps |
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Versões** | Gerenciamento de versões e rollouts graduais |
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Tracks** | Alpha, Beta e Produção |
+| <img src="googleplayconsole.jpg" height="16"/> **Assinatura** | Geração e gestão de chave APK/AAB |
+| <img src="googleplayconsole.jpg" height="16"/> **Publicação** | Upload, review e publicação de apps |
+| <img src="googleplayconsole.jpg" height="16"/> **Versões** | Gerenciamento de versões e rollouts graduais |
+| <img src="googleplayconsole.jpg" height="16"/> **Tracks** | Alpha, Beta e Produção |
 
 </details>
 
