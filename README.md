@@ -242,11 +242,18 @@ const gean = {
 
 ---
 
-## 🏆 Troféus GitHub
+## 🏆 Conquistas
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=geanoliveira99&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=4&rank=SECRET,SSS,SS,S,AAA,AA,A,B,C)](https://github.com/ryo-ma/github-profile-trophy)
+![](https://img.shields.io/badge/🚀_Primeiro_Commit-6C63FF?style=for-the-badge)
+![](https://img.shields.io/badge/📱_App_na_Play_Store-3DDC84?style=for-the-badge)
+![](https://img.shields.io/badge/🍎_App_na_App_Store-000000?style=for-the-badge)
+![](https://img.shields.io/badge/⚛️_React_Developer-61DAFB?style=for-the-badge&logoColor=black)
+![](https://img.shields.io/badge/🤖_Kotlin_Native-0095D5?style=for-the-badge)
+![](https://img.shields.io/badge/🗄️_Oracle_SQL-F80000?style=for-the-badge)
+![](https://img.shields.io/badge/🤖_GitHub_Copilot_User-000000?style=for-the-badge&logo=githubcopilot)
+![](https://img.shields.io/badge/☁️_Deploy_na_Vercel-000000?style=for-the-badge&logo=vercel)
 
 </div>
 
