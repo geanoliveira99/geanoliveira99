@@ -43,7 +43,7 @@
 ```typescript
 const gean = {
   nome:       "Gean Oliveira",
-  localidade: "Acre, Brasil 🇧🇷",
+  localidade: "Brasil 🇧🇷",
   atual:      "Full Stack Developer & Mobile Developer",
   foco:       ["React", "Node.js", "Android", "iOS", "Kotlin"],
   desde:      2024,
