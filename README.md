@@ -7,7 +7,7 @@
 [![Instagram](https://img.shields.io/badge/@geanoliveira99-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/geanoliveira99/)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5568981108001)
 [![Gmail](https://img.shields.io/badge/geansnswatch@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:geansnswatch@gmail.com)
-[![Location](https://img.shields.io/badge/Acre%2C_Brasil_🇧🇷-0D1117?style=for-the-badge&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Acre)
+[![Location](https://img.shields.io/badge/%2C_Brasil_🇧🇷-0D1117?style=for-the-badge&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Acre)
 
 <br/>
 
