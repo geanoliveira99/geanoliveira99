@@ -19,7 +19,7 @@
 
 <!-- Marquee infinito de tecnologias -->
 <div align="center">
-<img src="linguagensprogramacao.png" width="100%" style="display:block"/>
+<img src="linguagensprogramacao.gif" width="100%" style="display:block" alt="Marquee de tecnologias"/>
 </div>
 
 ---
