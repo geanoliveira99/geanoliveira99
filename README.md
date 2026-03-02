@@ -228,14 +228,15 @@ const gean = {
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=geanoliveira99&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=6c63ff&icon_color=00d9ff&text_color=ffffff"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=geanoliveira99&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff&text_color=ffffff"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=geanoliveira99&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=6c63ff&icon_color=00d9ff&text_color=ffffff&cache_seconds=1800"/>
+&nbsp;
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=geanoliveira99&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff&text_color=ffffff&cache_seconds=1800"/>
 
 </div>
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=geanoliveira99&theme=tokyonight-duo&hide_border=true&background=0D1117&ring=6C63FF&fire=FF6B6B&currStreakLabel=00D9FF)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=geanoliveira99&theme=tokyonight-duo&hide_border=true&background=0D1117&ring=6C63FF&fire=FF6B6B&currStreakLabel=00D9FF&cache_seconds=1800)](https://git.io/streak-stats)
 
 </div>
 
@@ -245,7 +246,7 @@ const gean = {
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=geanoliveira99&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1)](https://github.com/ryo-ma/github-profile-trophy)
+[![trophy](https://github-profile-trophy.vercel.app/?username=geanoliveira99&theme=radical&no-frame=true&no-bg=true&margin-w=8&column=4)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 
@@ -263,7 +264,7 @@ const gean = {
 
 <div align="center">
 
-![Visitor Count](https://profile-counter.glitch.me/geanoliveira99/count.svg)
+![Visitor Count](https://komarev.com/ghpvc/?username=geanoliveira99&color=6c63ff&style=for-the-badge&label=VISITAS+AO+PERFIL)
 
 <br/>
 
