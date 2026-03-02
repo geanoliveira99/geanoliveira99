@@ -1,13 +1,11 @@
-name: Generate Snake & Pac-Man Animations
+name: Generate Snake Animation
 
 on:
   schedule:
-    # Roda todo dia às 00:00 UTC
     - cron: "0 0 * * *"
-  workflow_dispatch: # Permite rodar manualmente
+  workflow_dispatch:
 
 jobs:
-  # ── Snake animation ──────────────────────────────────────────────
   generate-snake:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -23,28 +21,5 @@ jobs:
         with:
           target_branch: output
           build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # ── Pac-Man animation ─────────────────────────────────────────────
-  generate-pacman:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Generate Pac-Man contribution graph
-        uses: hugomd/pacman-contribution-graph@v1.1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: GeanOliveira
-          GAME: pacman
-
-      - name: Push Pac-Man SVG to output branch
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: dist
-          keep_history: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
