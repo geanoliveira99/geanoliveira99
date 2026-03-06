@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --surface: #16161e;
+  --border: #2a2a3a;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: #6c63ff;
+  --secondary: #00d9ff;
+  --accent: #ff6b6b;
+}
+
+[data-theme="light"] {
+  --bg: #c8cad8;
+  --bg2: #bbbdd0;
+  --surface: #d4d6e6;
+  --border: #9298b8;
+  --text: #0f0f20;
+  --text-muted: #2e3250;
+  --primary: #5b52ee;
+  --secondary: #0097b2;
+  --accent: #e85555;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: clip; max-width: 100vw; }
+
+body {
+  overflow-x: clip;
+  max-width: 100vw;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background 0.4s, color 0.4s;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(22,22,30,0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(42,42,58,0.6);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(209,213,232,0.6);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+@keyframes morph-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.morphing-bg {
+  background: linear-gradient(-45deg, #0a0a0f, #12122a, #0d1b2a, #0a1628);
+  background-size: 400% 400%;
+  animation: morph-bg 12s ease infinite;
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.tech-card {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.tech-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  border-color: var(--primary);
+  box-shadow: 0 0 24px rgba(108, 99, 255, 0.3);
+}
+
+.iphone-frame {
+  border-radius: 44px;
+  border: 10px solid #1a1a2e;
+  background: #000;
+  box-shadow: 0 0 0 2px #333, 0 40px 80px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: hidden;
+}
+.iphone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 26px;
+  background: #000;
+  border-radius: 0 0 18px 18px;
+  z-index: 10;
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--surface);
+  border-radius: 16px;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.gradient-border:hover::before { opacity: 1; }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 12s linear infinite; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--primary); }
+  50% { box-shadow: 0 0 30px var(--secondary); }
+}
+.pulse-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+@keyframes neon-border {
+  0%, 100% { border-color: var(--primary); box-shadow: 0 0 10px var(--primary); }
+  50% { border-color: var(--secondary); box-shadow: 0 0 20px var(--secondary); }
+}
+.neon-border {
+  animation: neon-border 3s ease-in-out infinite;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.6);
+}
+
+::selection { background: rgba(108, 99, 255, 0.4); }
+a { text-decoration: none; color: inherit; }
+
+@media (max-width: 768px) {
+  .iphone-frame { border-radius: 32px; border-width: 7px; }
+}

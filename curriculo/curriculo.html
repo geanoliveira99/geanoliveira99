@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currículo — Gean de Oliveira Brandão</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      background: #0f1b2d;
+      color: #e8edf2;
+      padding: 32px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6c63ff, #00d9ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+
+    .name {
+      font-size: 17px;
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .role {
+      font-size: 12px;
+      color: #00d9ff;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+    }
+
+    .sidebar-section { display: flex; flex-direction: column; gap: 8px; }
+
+    .sidebar-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6c63ff;
+      border-bottom: 1px solid #1e2d42;
+      padding-bottom: 4px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 12.5px;
+      color: #c5cdd8;
+      word-break: break-word;
+    }
+
+    .contact-item a {
+      color: #c5cdd8;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #00d9ff;
+      text-decoration: underline;
+    }
+
+    .contact-item .icon {
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 0px;
+    }
+
+    .skill-group { margin-bottom: 10px; }
+
+    .skill-group-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #00d9ff;
+      margin-bottom: 5px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: #1e2d42;
+      color: #c5cdd8;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      margin: 2px 2px 0 0;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: #c5cdd8;
+      margin-bottom: 3px;
+    }
+
+    .lang-level { color: #6c63ff; font-weight: 600; font-size: 12px; }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .main-header { border-bottom: 2px solid #6c63ff; padding-bottom: 10px; }
+
+    .main-header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f1b2d;
+      line-height: 1.2;
+    }
+
+    .main-header h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6c63ff;
+      margin-top: 2px;
+      letter-spacing: 0.3px;
+    }
+
+    .main-header p {
+      font-size: 13px;
+      color: #4a5568;
+      margin-top: 7px;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #6c63ff;
+      border-bottom: 1.5px solid #e8edf2;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* experiência */
+    .exp-item { margin-bottom: 14px; }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .exp-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f1b2d;
+    }
+
+    .exp-period {
+      font-size: 11.5px;
+      color: #6c63ff;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp-company {
+      font-size: 12px;
+      color: #4a5568;
+      margin: 1px 0 5px;
+      font-style: italic;
+    }
+
+    .exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .exp-list li {
+      font-size: 12.5px;
+      color: #2d3748;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .exp-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-size: 10px;
+      top: 2px;
+    }
+
+    /* educação */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0f1b2d;
+    }
+
+    .edu-school {
+      font-size: 12px;
+      color: #4a5568;
+      font-style: italic;
+      margin-top: 1px;
+    }
+
+    .edu-period {
+      font-size: 11.5px;
+      color: #6c63ff;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* conquistas */
+    .badge-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .badge {
+      background: #f0f2ff;
+      border: 1px solid #c7c3ff;
+      color: #4c3fbb;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside class="sidebar">
+
+    <div class="avatar-wrap">
+      <div class="avatar">GO</div>
+      <div class="name">Gean de Oliveira<br/>Brandão</div>
+      <div class="role">Full Stack &amp; Mobile Developer</div>
+    </div>
+
+    <!-- Contato -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Contato</div>
+      <div class="contact-item"><span class="icon"></span>
+        <a href="https://wa.me/5568981108001" target="_blank">(68) 98110-8001</a>
+      </div>
+      <div class="contact-item"><span class="icon">✉️</span>
+        <a href="mailto:geansnswatch@gmail.com">geansnswatch@gmail.com</a>
+      </div>
+      <div class="contact-item"><span class="icon">💼</span>
+        <a href="https://github.com/geanoliveira99" target="_blank">github.com/geanoliveira99</a>
+      </div>
+      <div class="contact-item"><span class="icon">📸</span>
+        <a href="https://www.instagram.com/geanoliveira99/" target="_blank">@geanoliveira99</a>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Tecnologias</div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Front-end</div>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">Vite</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Back-end</div>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">JWT / OAuth</span>
+        <span class="skill-tag">PHP</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Mobile</div>
+        <span class="skill-tag">Android Studio</span>
+        <span class="skill-tag">Kotlin</span>
+        <span class="skill-tag">Capacitor</span>
+        <span class="skill-tag">Xcode</span>
+        <span class="skill-tag">WebView</span>
+        <span class="skill-tag">Google Play</span>
+        <span class="skill-tag">App Store</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Banco de Dados</div>
+        <span class="skill-tag">Oracle SQL</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">PL/SQL</span>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Ferramentas</div>
+        <span class="skill-tag">Git / GitHub</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Vercel</span>
+        <span class="skill-tag">GitHub Copilot</span>
+        <span class="skill-tag">ERP Sankhya</span>
+      </div>
+    </div>
+
+    <!-- Idiomas -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Idiomas</div>
+      <div class="lang-item"><span>Português</span><span class="lang-level">Nativo</span></div>
+      <div class="lang-item"><span>Inglês</span><span class="lang-level">Técnico / Leitura</span></div>
+    </div>
+
+  </aside>
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main class="main">
+
+    <!-- Cabeçalho -->
+    <div class="main-header">
+      <h1>Gean de Oliveira Brandão</h1>
+      <h2>Desenvolvedor Full Stack &amp; Mobile · Analista de Sistemas</h2>
+      <p>
+        Desenvolvedor com experiência prática em desenvolvimento web (React, Node.js),
+        mobile nativo (Android/Kotlin e iOS/Capacitor) e integração com ERP Sankhya e
+        banco de dados Oracle. Atuando na Dom Porquito Agroindustrial S.A. desde abril de 2024,
+        entregando soluções completas do front-end ao deploy e publicação nas lojas Google Play e App Store.
+        Formado em Assistência Técnica Eletrônica com 5 anos de experiência em manutenção e diagnóstico,
+        o que amplia a visão analítica e a resolução de problemas no dia a dia.
+      </p>
+    </div>
+
+    <!-- Experiência -->
+    <div>
+      <div class="section-title">Experiência Profissional</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Desenvolvedor Full Stack &amp; Mobile</div>
+          <div class="exp-period">Abr 2024 — Atual</div>
+        </div>
+        <div class="exp-company">Dom Porquito Agroindustrial S.A.</div>
+        <ul class="exp-list">
+          <li>Desenvolvimento de SPAs e dashboards com React, TypeScript e Tailwind CSS</li>
+          <li>Construção de APIs REST com Node.js e Express.js, autenticação JWT</li>
+          <li>Desenvolvimento de apps Android nativos com Kotlin e Android Studio</li>
+          <li>Build e publicação de apps iOS via Capacitor, Xcode e TestFlight/App Store</li>
+          <li>Criação de apps híbridos (Android + iOS) com Capacitor e WebView</li>
+          <li>Gerenciamento de versões e publicação na Google Play Console</li>
+          <li>Customizações no ERP Sankhya: telas, relatórios e integração via API REST</li>
+          <li>Queries complexas, PL/SQL e otimização de banco de dados Oracle e MySQL</li>
+          <li>Deploy de projetos web na Vercel com CI/CD automatizado</li>
+          <li>Uso diário do GitHub Copilot para produtividade e qualidade de código</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Técnico em Assistência Técnica Eletrônica</div>
+          <div class="exp-period">2019 — 2024</div>
+        </div>
+        <div class="exp-company">Assistência Técnica</div>
+        <ul class="exp-list">
+          <li>Diagnóstico e manutenção de equipamentos eletrônicos (celulares, notebooks, placas)</li>
+          <li>Atendimento ao cliente, orçamento e suporte técnico presencial</li>
+          <li>Instalação e configuração de sistemas operacionais e softwares</li>
+          <li>Resolução de problemas de hardware e software com metodologia analítica</li>
+          <li>Gestão de peças, estoque e fluxo de atendimento da assistência</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Educação -->
+    <div>
+      <div class="section-title">Formação Acadêmica</div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Análise e Desenvolvimento de Sistemas</div>
+          <div class="edu-school">Cursando — Instituição de Ensino Superior</div>
+        </div>
+        <div class="edu-period">Em andamento</div>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Ensino Médio Completo</div>
+          <div class="edu-school">Ensino Médio Completo</div>
+        </div>
+        <div class="edu-period">Concluído</div>
+      </div>
+
+    </div>
+
+    <!-- Projetos / Conquistas -->
+    <div>
+      <div class="section-title">Conquistas &amp; Destaques</div>
+      <div class="badge-wrap">
+        <span class="badge">📱 App publicado na Google Play</span>
+        <span class="badge">🍎 App publicado na App Store</span>
+        <span class="badge">⚛️ React Developer</span>
+        <span class="badge">🤖 Kotlin Native</span>
+        <span class="badge">🗄️ Oracle SQL</span>
+        <span class="badge">☁️ Deploy Vercel</span>
+        <span class="badge">🤖 GitHub Copilot User</span>
+        <span class="badge">🔗 ERP Sankhya</span>
+      </div>
+    </div>
+
+    <!-- Diferenciais -->
+    <div>
+      <div class="section-title">Diferenciais</div>
+      <ul class="exp-list">
+        <li>Experiência end-to-end: da interface ao banco de dados e publicação nas lojas</li>
+        <li>Desenvolvimento mobile para Android e iOS com uma única base de código (Capacitor)</li>
+        <li>Integração direta com sistemas ERP corporativos (Sankhya) e Oracle</li>
+        <li>Entrega contínua com Git, GitHub Actions e Vercel</li>
+        <li>Autodidata com aprendizado constante e uso de IA no fluxo de trabalho</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
