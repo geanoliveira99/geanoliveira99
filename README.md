@@ -286,13 +286,56 @@ const gean = {
 
 ---
 
+## 🚀 Deploy — Cloudflare Pages
+
+> Guia completo com todos os comandos usados para fazer build e deploy deste site.
+
+### ⚡ Comandos rápidos
+
+```powershell
+# 1. Build de produção
+cmd /c "cd /d "C:\Users\T.I DOM PORQUITO\Videos\site-gean" && npm run build 2>&1"
+
+# 2. Deploy no Cloudflare Pages
+cmd /c "cd /d "C:\Users\T.I DOM PORQUITO\Videos\site-gean" && npx wrangler pages deploy dist --project-name geanoliveira99 --branch main --commit-dirty=true 2>&1"
+```
+
+### 🌐 URLs do projeto
+
+| Ambiente | URL |
+|:---|:---|
+| ✅ **Produção** | https://geanoliveira99.pages.dev |
+| 🔗 Branch main | https://main.geanoliveira99.pages.dev |
+
+### 🛠️ Primeiro deploy em projeto novo
+
+Ao criar um projeto novo no Cloudflare Pages via wrangler, ele pergunta o nome do branch de produção. **Sempre coloque `main`**. Caso contrário nenhum deploy aparece como Produção e a URL `projeto.pages.dev` fica com erro *"Nothing is here yet"*.
+
+**Se já criou errado**, corrija assim:
+
+1. Acesse **dash.cloudflare.com** → **Workers e Pages** → seu projeto
+2. Aba **Configurações** → role até **Geral**
+3. Em **"Ramificação de produção"** clique em **Renomear**
+4. Mude para `main` e salve
+5. Rode o deploy novamente com `--branch main`
+
+### 🔄 Dev local
+
+```powershell
+# Inicie o servidor de desenvolvimento na porta 5174
+npm run dev
+# Acesse: http://localhost:5174
+```
+
+---
+
 <div align="center">
 
 ![Visitor Count](https://profile-counter.glitch.me/GeanOliveira/count.svg)
 
 <br/>
 
-**✨ Obrigado pela visita! Bora codar juntos? ��**
+**✨ Obrigado pela visita! Bora codar juntos? 🚀**
 
 [![Instagram](https://img.shields.io/badge/@geanoliveira99-E1306C?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/geanoliveira99/)
 [![WhatsApp](https://img.shields.io/badge/Falar_no_WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/5568981108001)

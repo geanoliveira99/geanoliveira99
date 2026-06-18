@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import AuroraShader from './ui/AuroraShader';
@@ -12,6 +12,15 @@ const roles = [
   'Capacitor / WebView Expert',
 ];
 
+// Ângulos iniciais — 90° de distância entre cada label
+const ORBIT_LABELS = [
+  { label: 'React',   startDeg: 0   },
+  { label: 'Node.js', startDeg: 90  },
+  { label: 'Kotlin',  startDeg: 180 },
+  { label: 'iOS',     startDeg: 270 },
+];
+const ORBIT_SPEED = 0.4; // graus por frame (~14s por volta a 60fps)
+
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState('');
@@ -20,8 +29,39 @@ export default function Hero() {
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
   );
 
-  // Memoiza as props do shader para evitar re-criação do WebGL quando o texto digita
   const auroraColors = useMemo(() => ['#2a1060', '#003355', '#3a0030'] as [string, string, string], []);
+
+  // Refs para os divs de cada label — animamos via DOM direto (sem re-render)
+  const labelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const globeWrapperRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
+  const anglesRef = useRef(ORBIT_LABELS.map(l => l.startDeg));
+
+  const animate = useCallback(() => {
+    const wrapper = globeWrapperRef.current;
+    if (!wrapper) { rafRef.current = requestAnimationFrame(animate); return; }
+    const r = wrapper.offsetWidth / 2 + 16; // raio = metade do globo + 16px de margem
+    const cx = 0; // já estamos centralizados via top/left 50%
+    const cy = 0;
+
+    ORBIT_LABELS.forEach((_, i) => {
+      anglesRef.current[i] = (anglesRef.current[i] + ORBIT_SPEED) % 360;
+      const rad = (anglesRef.current[i] * Math.PI) / 180;
+      const x = cx + r * Math.cos(rad);
+      const y = cy + r * Math.sin(rad);
+      const el = labelRefs.current[i];
+      if (el) {
+        el.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
+      }
+    });
+
+    rafRef.current = requestAnimationFrame(animate);
+  }, []);
+
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [animate]);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -51,7 +91,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden">
-      {/* Aurora background — WebGL no desktop; mobile usa gradiente estático */}
+      {/* Aurora background */}
       <div className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
         {!isMobile && (
           <AuroraShader colorStops={auroraColors} amplitude={0.45} blend={0.12} speed={0.35} />
@@ -62,7 +102,7 @@ export default function Hero() {
       </div>
       <div className="absolute inset-0 dot-grid opacity-20" style={{ zIndex: 1 }} />
 
-      {/* Marquee image — always dark background so white icons are visible */}
+      {/* Marquee */}
       <div
         className="relative w-full overflow-hidden flex-shrink-0"
         style={{ zIndex: 10, marginTop: '64px', height: 80, background: '#0a0a0f' }}
@@ -73,7 +113,6 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="relative w-full h-full overflow-hidden"
         >
-          {/* Marquee — CSS puro, zero Framer Motion overhead */}
           <div className="hero-marquee-track">
             {[...Array(4)].map((_, i) => (
               <img
@@ -81,22 +120,12 @@ export default function Hero() {
                 src="/linguagensprogramacao.png"
                 alt=""
                 aria-hidden="true"
-                style={{
-                  height: '64px',
-                  width: 'auto',
-                  flexShrink: 0,
-                  display: 'block',
-                  userSelect: 'none',
-                  pointerEvents: 'none',
-                  marginRight: '32px',
-                }}
+                style={{ height: '64px', width: 'auto', flexShrink: 0, display: 'block', userSelect: 'none', pointerEvents: 'none', marginRight: '32px' }}
               />
             ))}
           </div>
-          {/* Fade edges — background sempre #0a0a0f */}
           <div className="absolute inset-y-0 left-0 w-24" style={{ background: 'linear-gradient(to right, #0a0a0f, transparent)', pointerEvents: 'none' }} />
           <div className="absolute inset-y-0 right-0 w-24" style={{ background: 'linear-gradient(to left, #0a0a0f, transparent)', pointerEvents: 'none' }} />
-          {/* Bottom gradient — sempre escuro */}
           <div className="absolute bottom-0 left-0 right-0 h-16" style={{ background: 'linear-gradient(to bottom, transparent, rgba(10,10,15,0.95))', pointerEvents: 'none' }} />
         </motion.div>
       </div>
@@ -104,13 +133,9 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 pt-8 pb-24 flex flex-col items-center gap-6">
 
-        {/* Badge + título — centralizados */}
+        {/* Badge + título */}
         <div className="w-full text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 text-sm font-medium"
               style={{ background: 'rgba(108,99,255,0.15)', color: 'var(--primary)', border: '1px solid rgba(108,99,255,0.3)' }}>
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -130,7 +155,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Globe — centralizado, maior no desktop */}
+        {/* Globe */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -138,23 +163,11 @@ export default function Hero() {
           className="flex items-center justify-center"
           style={{ width: '100%' }}
         >
-          {/* Wrapper com overflow visible para labels, mas não causa scroll horizontal */}
           <div
-            style={{
-              position: 'relative',
-              width: 'clamp(280px, 50vw, 480px)',
-              height: 'clamp(280px, 50vw, 480px)',
-              flexShrink: 0,
-            }}
+            ref={globeWrapperRef}
+            style={{ position: 'relative', width: 'clamp(280px, 50vw, 480px)', height: 'clamp(280px, 50vw, 480px)', flexShrink: 0 }}
           >
-            {/* Globe — desktop: full quality | mobile: mapSamples reduzido para não travar */}
-            <div
-              style={{
-                width: '100%',
-                height: '100%',
-                filter: 'drop-shadow(0 0 60px rgba(108,99,255,0.5))',
-              }}
-            >
+            <div style={{ width: '100%', height: '100%', filter: 'drop-shadow(0 0 60px rgba(108,99,255,0.5))' }}>
               <GlobeComponent
                 className="w-full h-full"
                 dark={1}
@@ -165,17 +178,29 @@ export default function Hero() {
               />
             </div>
 
-            {/* Labels flutuantes — CSS puro (zero Framer Motion por frame) */}
-            {[
-              { label: 'React',   style: { top: '6%',  right: '4%'  }, delay: '0s'    },
-              { label: 'Node.js', style: { top: '36%', left: '2%'   }, delay: '0.5s'  },
-              { label: 'Kotlin',  style: { top: '60%', right: '4%'  }, delay: '1s'    },
-              { label: 'iOS',     style: { top: '76%', left: '4%'   }, delay: '1.5s'  },
-            ].map(({ label, style, delay }) => (
+            {/* Labels — posicionados via rAF com trigonometria, sem CSS @keyframes */}
+            {ORBIT_LABELS.map(({ label }, i) => (
               <div
                 key={label}
-                className="absolute px-3 py-1 rounded-full text-sm font-bold glass hero-label-float"
-                style={{ color: 'var(--primary)', zIndex: 20, pointerEvents: 'none', whiteSpace: 'nowrap', animationDelay: delay, ...style }}
+                ref={el => { labelRefs.current[i] = el; }}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  pointerEvents: 'none',
+                  zIndex: 20,
+                  willChange: 'transform',
+                  whiteSpace: 'nowrap',
+                  padding: '3px 10px',
+                  borderRadius: 20,
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: 'var(--primary)',
+                  background: 'rgba(22,22,30,0.82)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(108,99,255,0.45)',
+                  boxShadow: '0 0 10px rgba(108,99,255,0.35)',
+                }}
               >
                 {label}
               </div>

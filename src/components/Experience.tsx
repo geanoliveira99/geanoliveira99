@@ -185,12 +185,12 @@ export default function Experience() {
   const next = () => setCurrent((c) => Math.min(experiences.length - VISIBLE, c + 1));
 
   return (
-    <section id="experience" className="py-24 px-4 relative overflow-hidden">
+    <section id="experience" className="relative overflow-hidden" style={{ padding: '6rem 2rem' }}>
       {/* BG glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-5"
         style={{ background: 'var(--primary)', filter: 'blur(120px)' }} />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div style={{ maxWidth: '80rem', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 40 }}
@@ -202,11 +202,10 @@ export default function Experience() {
             style={{ background: 'rgba(255,107,107,0.12)', color: 'var(--accent)', border: '1px solid rgba(255,107,107,0.3)' }}>
             Jornada Profissional
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">
-            Minha <span className="gradient-text">Experiência</span>
-          </h2>
-          <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-            Anos desenvolvendo soluções reais com impacto direto nos negócios dos clientes.
+                  <h2 className="text-4xl md:text-5xl font-bold mb-12 font-sans">
+          Minha <span className="gradient-text">Experiência</span>
+        </h2>
+          <p className="text-base sm:text-lg max-w-2xl mx-auto text-center" style={{ color: 'var(--text-muted)' }}>
           </p>
         </motion.div>
 
@@ -276,6 +275,83 @@ export default function Experience() {
   );
 }
 
+/* Faísca Matrix percorrendo a borda do card */
+function SparkBorder({ triggered }: { triggered: boolean }) {
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      style={{ borderRadius: '1rem', overflow: 'visible' }}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        {/* Glow verde Matrix */}
+        <filter id="spark-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      {/* Trilha da borda (invisível, só para o spark seguir) */}
+      <rect
+        x="1" y="1"
+        width="calc(100% - 2px)" height="calc(100% - 2px)"
+        rx="15" ry="15"
+        fill="none"
+        stroke="transparent"
+        strokeWidth="2"
+        id="spark-path"
+      />
+
+      {triggered && (
+        <>
+          {/* Cauda longa da faísca */}
+          <rect
+            x="1" y="1"
+            width="calc(100% - 2px)" height="calc(100% - 2px)"
+            rx="15" ry="15"
+            fill="none"
+            stroke="url(#sparkGrad)"
+            strokeWidth="2"
+            strokeDasharray="120 9999"
+            strokeDashoffset="0"
+            strokeLinecap="round"
+            filter="url(#spark-glow)"
+            style={{
+              animation: 'spark-run 1.1s cubic-bezier(0.4,0,0.2,1) forwards',
+            }}
+          />
+          {/* Ponta brilhante da faísca */}
+          <rect
+            x="1" y="1"
+            width="calc(100% - 2px)" height="calc(100% - 2px)"
+            rx="15" ry="15"
+            fill="none"
+            stroke="#00ff41"
+            strokeWidth="3"
+            strokeDasharray="6 9999"
+            strokeDashoffset="0"
+            strokeLinecap="round"
+            filter="url(#spark-glow)"
+            style={{
+              animation: 'spark-run 1.1s cubic-bezier(0.4,0,0.2,1) forwards',
+            }}
+          />
+          <defs>
+            <linearGradient id="sparkGrad" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#00ff41" stopOpacity="0" />
+              <stop offset="60%" stopColor="#00ff41" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="#39ff14" stopOpacity="1" />
+            </linearGradient>
+          </defs>
+        </>
+      )}
+    </svg>
+  );
+}
+
 function ExperienceCard({ exp, index, visible, total }: {
   exp: typeof experiences[0];
   index: number;
@@ -283,8 +359,20 @@ function ExperienceCard({ exp, index, visible, total }: {
   total: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const isInView = useInView(ref, { once: false, margin: '-60px' });
   const isActive = index >= visible && index < visible + total;
+  const [sparked, setSparked] = useState(false);
+  const didSpark = useRef(false);
+
+  // Dispara a faísca toda vez que o card entra na viewport
+  if (isInView && !didSpark.current) {
+    didSpark.current = true;
+    setSparked(true);
+    setTimeout(() => {
+      setSparked(false);
+      didSpark.current = false;
+    }, 1300);
+  }
 
   return (
     <motion.div
@@ -292,15 +380,20 @@ function ExperienceCard({ exp, index, visible, total }: {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: isActive ? 1 : 0.5, y: 0, scale: isActive ? 1 : 0.97 } : {}}
       transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-      className="flex-shrink-0 rounded-2xl p-6 gradient-border"
+      className="flex-shrink-0 rounded-2xl p-6"
       style={{
         background: 'var(--surface)',
-        border: '1px solid var(--border)',
+        border: `1px solid ${exp.color}33`,
         width: '100%',
         minWidth: 0,
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <div className="flex items-center gap-4 mb-4">
+      {/* Faísca Matrix */}
+      <SparkBorder triggered={sparked} />
+
+      <div className="flex items-center gap-4 mb-4" style={{ position: 'relative', zIndex: 1 }}>
         <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
           style={{ background: `${exp.color}18`, border: `1px solid ${exp.color}33` }}>
           <exp.SVG size={36} />
@@ -312,7 +405,7 @@ function ExperienceCard({ exp, index, visible, total }: {
           </span>
         </div>
       </div>
-      <ul className="space-y-2">
+      <ul className="space-y-2" style={{ position: 'relative', zIndex: 1 }}>
         {exp.items.map((item) => (
           <li key={item} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
             <span style={{ color: exp.color, marginTop: '2px', flexShrink: 0 }}>▸</span>

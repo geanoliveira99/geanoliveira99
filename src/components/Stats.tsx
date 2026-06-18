@@ -7,7 +7,7 @@ const stats = [
   { value: 16, suffix: '', label: 'Projetos Entregues', color: 'var(--primary)' },
   { value: 3, suffix: ' anos', label: 'de Experiência', color: 'var(--secondary)' },
   { value: 10, suffix: '+', label: 'Clientes Satisfeitos', color: 'var(--accent)' },
-  { value: 10, suffix: '+', label: 'Apps na Play Store', color: '#8CC84B' },
+  { value: 4, suffix: '+', label: 'Apps na Play Store', color: '#8CC84B' },
 ];
 
 // Mock avatar URLs using a free avatar service
@@ -24,8 +24,8 @@ export default function Stats() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-16 px-4" style={{ background: 'var(--bg2)' }}>
-      <div className="max-w-7xl mx-auto">
+    <section style={{ padding: '4rem 2rem', background: 'var(--bg2)' }}>
+      <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
         {/* Stats row */}
         <div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {stats.map((stat, i) => (

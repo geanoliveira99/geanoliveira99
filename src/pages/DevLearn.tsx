@@ -1860,10 +1860,26 @@ const modules = [
 export default function DevLearn() {
   const [activeModule, setActiveModule] = useState<ModuleId>('home');
   const [slideIndex, setSlideIndex] = useState(0);
-  const [completedModules, setCompletedModules] = useState<Set<ModuleId>>(new Set());
+  const [completedModules, setCompletedModules] = useState<Set<ModuleId>>(() => {
+    try {
+      const saved = localStorage.getItem('devlearn_completed');
+      if (saved) {
+        const arr: ModuleId[] = JSON.parse(saved);
+        return new Set(arr);
+      }
+    } catch { /* ignora */ }
+    return new Set();
+  });
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth < 700 : false
   );
+
+  // Persiste progresso no localStorage sempre que completedModules mudar
+  useEffect(() => {
+    try {
+      localStorage.setItem('devlearn_completed', JSON.stringify([...completedModules]));
+    } catch { /* ignora */ }
+  }, [completedModules]);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 700);
@@ -1889,7 +1905,13 @@ export default function DevLearn() {
       <div style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(8,8,18,0.92)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(108,99,255,0.2)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
         <motion.button
           whileTap={{ scale: 0.93 }}
-          onClick={() => activeModule !== 'home' ? setActiveModule('home') : window.history.back()}
+          onClick={() => {
+            if (activeModule !== 'home') {
+              setActiveModule('home');
+            } else {
+              window.location.href = '/';
+            }
+          }}
           style={{ background: 'rgba(108,99,255,0.15)', border: '1px solid rgba(108,99,255,0.3)', borderRadius: 10, padding: '6px 12px', color: '#a78bfa', fontSize: 13, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap' }}
         >
           ← {activeModule !== 'home' ? 'Menu' : 'Voltar'}

@@ -36,27 +36,6 @@ const BalancaSVG = () => (
   </svg>
 );
 
-const BusSVG = () => (
-  <svg viewBox="0 0 40 40" width="36" height="36" fill="none">
-    <rect x="2" y="2" width="36" height="36" rx="8" fill="url(#busGrad)" />
-    <rect x="7" y="12" width="26" height="16" rx="3" fill="white" opacity="0.9" />
-    <rect x="9" y="14" width="7" height="6" rx="1" fill="url(#busGrad)" />
-    <rect x="18" y="14" width="7" height="6" rx="1" fill="url(#busGrad)" />
-    <rect x="27" y="14" width="4" height="6" rx="1" fill="url(#busGrad)" />
-    <rect x="7" y="26" width="26" height="3" rx="1" fill="white" opacity="0.5" />
-    <circle cx="12" cy="31" r="2.5" fill="white" />
-    <circle cx="28" cy="31" r="2.5" fill="white" />
-    <rect x="5" y="18" width="2" height="6" rx="1" fill="white" opacity="0.7" />
-    <rect x="33" y="18" width="2" height="6" rx="1" fill="white" opacity="0.7" />
-    <defs>
-      <linearGradient id="busGrad" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#ff6b6b" />
-        <stop offset="100%" stopColor="#ff9a00" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
-
 const PlayStoreSVG = () => (
   <svg viewBox="0 0 40 40" width="36" height="36" fill="none">
     <rect x="2" y="2" width="36" height="36" rx="8" fill="url(#playBg)" />
@@ -108,21 +87,43 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Dporquitobus',
-    description: 'Sistema de gestão para empresa de transportes.',
-    url: 'http://dporquitobus.sgean.com/',
-    tags: ['React', 'Node.js', 'Gestão'],
-    color: '#ff6b6b',
-    Icon: BusSVG,
+    title: 'SPACE GSD',
+    description: 'Jogo espacial com missões, combates e desafios. Disponível na Google Play Store.',
+    url: 'https://play.google.com/store/apps/details?id=space.gtasadreamer.spacegsd',
+    tags: ['Android', 'Game', 'Google Play'],
+    color: '#6c63ff',
+    Icon: PlayStoreSVG,
     noIframe: true,
-    externalLabel: 'Abrir no Navegador',
+    externalLabel: 'Ver na Google Play',
   },
   {
     id: 4,
-    title: 'Dporquitobus App',
-    description: 'Aplicativo Android para consulta de rotas e horários de ônibus, publicado na Google Play Store.',
+    title: 'RetrôView',
+    description: 'Aplicativo para assistir vídeos do YouTube com interface retrô. Publicado na Google Play Store.',
+    url: 'https://play.google.com/store/apps/details?id=com.youtuberetro.app',
+    tags: ['Android', 'YouTube', 'Google Play'],
+    color: '#ff0000',
+    Icon: PlayStoreSVG,
+    noIframe: true,
+    externalLabel: 'Ver na Google Play',
+  },
+  {
+    id: 5,
+    title: 'Scale',
+    description: 'App de gerenciamento e controle de escalas. Disponível na Google Play Store.',
+    url: 'https://play.google.com/store/apps/details?id=space.gtasadramer.scale',
+    tags: ['Android', 'Produtividade', 'Google Play'],
+    color: '#00d9ff',
+    Icon: PlayStoreSVG,
+    noIframe: true,
+    externalLabel: 'Ver na Google Play',
+  },
+  {
+    id: 6,
+    title: 'Dom Porquito Bus',
+    description: 'Aplicativo para consulta de rotas e horários de ônibus. Publicado na Google Play Store.',
     url: 'https://play.google.com/store/apps/details?id=space.gtasadreamer.domporquitobus',
-    tags: ['Android', 'Google Play', 'Mobile'],
+    tags: ['Android', 'Transporte', 'Google Play'],
     color: '#34a853',
     Icon: PlayStoreSVG,
     noIframe: true,
@@ -226,7 +227,7 @@ function IPhoneModal({ project, onClose }: { project: Project; onClose: () => vo
                     <div>
                       <p className="text-white font-bold text-base mb-1">{project.title}</p>
                       <p className="text-gray-400 text-sm leading-relaxed" style={{ whiteSpace: 'pre-line' }}>
-                        {project.id === 4
+                        {[3, 4, 5, 6].includes(project.id)
                           ? 'Disponível na Google Play Store.\nBaixe o app gratuitamente!'
                           : 'Acesse diretamente no\nseu navegador.'}
                       </p>
@@ -283,11 +284,11 @@ export default function Projects() {
   const isHeaderVisible = useInView(headerRef, { once: true });
 
   return (
-    <section id="projects" className="py-24 px-4 relative overflow-hidden">
+    <section id="projects" className="relative overflow-hidden" style={{ padding: '6rem 2rem' }}>
       {/* Background */}
       <div className="absolute inset-0 dot-grid opacity-10" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div style={{ maxWidth: '80rem', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 40 }}
@@ -302,8 +303,7 @@ export default function Projects() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">
             Meus <span className="gradient-text">Projetos</span>
           </h2>
-          <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
-            Projetos reais em produção. Clique em qualquer projeto para ver rodando dentro de uma tela de iPhone interativa.
+          <p className="text-base sm:text-lg max-w-2xl mx-auto text-center" style={{ color: 'var(--text-muted)' }}>
           </p>
         </motion.div>
 

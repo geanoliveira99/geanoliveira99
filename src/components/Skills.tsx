@@ -125,14 +125,14 @@ export default function Skills() {
   const isHeaderVisible = useInView(headerRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="skills" className="py-24 px-4 relative overflow-hidden">
+    <section id="skills" className="py-24 relative overflow-hidden" style={{ padding: '6rem 2rem' }}>
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-5"
         style={{ background: 'var(--primary)', filter: 'blur(80px)', transform: 'translate(-50%, -50%)' }} />
       <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full opacity-5"
         style={{ background: 'var(--secondary)', filter: 'blur(80px)', transform: 'translate(50%, 50%)' }} />
 
-      <div className="max-w-7xl mx-auto">
+      <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 40 }}
@@ -144,10 +144,13 @@ export default function Skills() {
             style={{ background: 'rgba(108,99,255,0.15)', color: 'var(--primary)', border: '1px solid rgba(108,99,255,0.3)' }}>
             Stack Técnica
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4">
+          <div className="flex justify-center">
+            <img src="/DEV GEANOLIVEIRA99.gif" alt="Animação Hero" className="w-64 h-64 mb-4" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 font-sans">
             <span className="gradient-text">Habilidades</span> & Ferramentas
           </h2>
-          <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-base sm:text-lg" style={{ color: 'var(--text-muted)', maxWidth: '42rem', margin: '0 auto', textAlign: 'center' }}>
             Tecnologias que uso no dia a dia para criar experiências digitais inovadoras,
             desde apps mobile a sistemas web corporativos.
           </p>

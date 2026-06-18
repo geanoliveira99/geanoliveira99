@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, MessageCircle, Mail, X, Github } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, X, Github, Linkedin } from 'lucide-react';
 import MiniGame from './ui/MiniGame';
 
 // SVGs animados por seção
@@ -197,18 +197,12 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
+            {/* Logo — só nome digitando, sem quadrado GO */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => handleLink('#hero')}
             >
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center neon-border"
-                style={{ background: 'linear-gradient(135deg, var(--primary), var(--secondary))' }}
-              >
-                <span className="text-white font-black text-sm">GO</span>
-              </div>
               {/* Nome animado — digita, fica 3s, apaga, fica 2s, repete */}
               <AnimatePresence mode="wait">
                 {nameDisplayed.length > 0 && (
@@ -276,6 +270,17 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               {/* Quick contact */}
               <div className="flex items-center gap-1">
+                <motion.a
+                  whileHover={{ scale: 1.15, rotate: -5 }}
+                  href="https://www.linkedin.com/in/geanoliveira99/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-all duration-300"
+                  style={{ background: 'rgba(0,119,181,0.18)', color: '#0077B5' }}
+                  title="LinkedIn"
+                >
+                  <Linkedin size={15} />
+                </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.15, rotate: 5 }}
                   href="https://github.com/geanoliveira99"

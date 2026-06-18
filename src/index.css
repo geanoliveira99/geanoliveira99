@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/* ── Garante que as classes de max-width do Tailwind v4 funcionem corretamente ── */
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --width-7xl: 80rem;
+  --width-6xl: 72rem;
+  --width-5xl: 64rem;
+  --width-4xl: 56rem;
+  --width-3xl: 48rem;
+  --width-2xl: 42rem;
+  --width-xl: 36rem;
+}
+
 :root {
   --bg: #0a0a0f;
   --bg2: #111118;
@@ -224,9 +240,32 @@ a { text-decoration: none; color: inherit; }
 .hero-label-float {
   animation: hero-label-float 3s ease-in-out infinite;
 }
+
+/* ── Hero: labels orbitando o globo ──
+   Cada label tem um div externo (arm) que rotaciona em torno do centro do globo,
+   e um div interno (tag) que contra-rotaciona para manter o texto legível.
+   O raio é calculado em JS via ResizeObserver e aplicado como left + transformOrigin inline.
+   O ângulo inicial é controlado por animation-delay negativo:
+   delay = -(deg/360) * duração → começa no ponto correto da órbita.
+── */
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes orbit-counter {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(-360deg); }
+}
 @keyframes scrollBounce {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(8px); }
+}
+
+/* ── Faísca Matrix nos cards de Experience ── */
+@keyframes spark-run {
+  0%   { stroke-dashoffset: 0;    opacity: 1; }
+  80%  { stroke-dashoffset: -900; opacity: 0.9; }
+  100% { stroke-dashoffset: -1100; opacity: 0; }
 }
 
 /* ── Otimizações Android: desabilita efeitos pesados no mobile ── */

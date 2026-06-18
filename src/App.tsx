@@ -2,13 +2,14 @@ import './index.css';
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Utilitarios from './components/Utilitarios';
 
 const DevLearn  = lazy(() => import('./pages/DevLearn'));
 const Stats     = lazy(() => import('./components/Stats'));
 const Skills    = lazy(() => import('./components/Skills'));
 const Experience = lazy(() => import('./components/Experience'));
 const Projects  = lazy(() => import('./components/Projects'));
-const Contact   = lazy(() => import('./components/Contact'));
+const Ambiente3D = lazy(() => import('./components/Ambiente3D'));
 const Footer    = lazy(() => import('./components/Footer'));
 
 const Loader = () => (
@@ -38,12 +39,13 @@ function App() {
           <Skills />
           <Experience />
           <Projects />
-          <Contact />
+          <Ambiente3D />
         </Suspense>
       </main>
       <Suspense fallback={null}>
         <Footer />
       </Suspense>
+      <Utilitarios />
     </div>
   );
 }
