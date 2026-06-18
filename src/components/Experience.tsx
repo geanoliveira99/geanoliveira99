@@ -178,7 +178,7 @@ const VISIBLE = 3;
 
 export default function Experience() {
   const headerRef = useRef(null);
-  const isHeaderVisible = useInView(headerRef, { once: true });
+  const isHeaderVisible = useInView(headerRef, { once: true, margin: '-60px' });
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((c) => Math.max(0, c - 1));
@@ -289,9 +289,9 @@ function ExperienceCard({ exp, index, visible, total }: {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, filter: 'blur(12px)' }}
-      animate={isInView ? { opacity: isActive ? 1 : 0.5, x: 0, filter: 'blur(0px)', scale: isActive ? 1 : 0.97 } : {}}
-      transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: isActive ? 1 : 0.5, y: 0, scale: isActive ? 1 : 0.97 } : {}}
+      transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="flex-shrink-0 rounded-2xl p-6 gradient-border"
       style={{
         background: 'var(--surface)',

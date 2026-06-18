@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import AuroraShader from './ui/AuroraShader';
 import GlobeComponent from './ui/Globe';
-import { useTheme } from '../context/ThemeContext';
 
 const roles = [
   'Desenvolvedor React',
@@ -20,7 +19,6 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(() =>
     typeof window !== 'undefined' ? window.innerWidth < 768 : false
   );
-  const { theme } = useTheme();
 
   // Memoiza as props do shader para evitar re-criação do WebGL quando o texto digita
   const auroraColors = useMemo(() => ['#2a1060', '#003355', '#3a0030'] as [string, string, string], []);
@@ -53,15 +51,12 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden">
-      {/* Aurora background — WebGL apenas no desktop; mobile usa gradiente estático */}
+      {/* Aurora background — WebGL no desktop; mobile usa gradiente estático */}
       <div className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
-        {theme === 'dark' && !isMobile && (
+        {!isMobile && (
           <AuroraShader colorStops={auroraColors} amplitude={0.45} blend={0.12} speed={0.35} />
         )}
-        {theme === 'dark' && isMobile && (
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0d0820 0%, #0a0a0f 40%, #001628 100%)' }} />
-        )}
-        {theme === 'light' && (
+        {isMobile && (
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0d0820 0%, #0a0a0f 40%, #001628 100%)' }} />
         )}
       </div>
@@ -78,13 +73,8 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="relative w-full h-full overflow-hidden"
         >
-          {/* Marquee — 4 cópias: anima -50% = 2 imagens = loop perfeito */}
-          <motion.div
-            className="flex h-full items-center"
-            style={{ willChange: 'transform', width: 'max-content' }}
-            animate={{ x: ['0px', '-50%'] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
-          >
+          {/* Marquee — CSS puro, zero Framer Motion overhead */}
+          <div className="hero-marquee-track">
             {[...Array(4)].map((_, i) => (
               <img
                 key={i}
@@ -102,7 +92,7 @@ export default function Hero() {
                 }}
               />
             ))}
-          </motion.div>
+          </div>
           {/* Fade edges — background sempre #0a0a0f */}
           <div className="absolute inset-y-0 left-0 w-24" style={{ background: 'linear-gradient(to right, #0a0a0f, transparent)', pointerEvents: 'none' }} />
           <div className="absolute inset-y-0 right-0 w-24" style={{ background: 'linear-gradient(to left, #0a0a0f, transparent)', pointerEvents: 'none' }} />
@@ -157,7 +147,7 @@ export default function Hero() {
               flexShrink: 0,
             }}
           >
-            {/* Globo */}
+            {/* Globe — desktop: full quality | mobile: mapSamples reduzido para não travar */}
             <div
               style={{
                 width: '100%',
@@ -167,30 +157,28 @@ export default function Hero() {
             >
               <GlobeComponent
                 className="w-full h-full"
-                dark={theme === 'dark' ? 1 : 0}
-                baseColor={theme === 'dark' ? '#6c63ff' : '#5b52ee'}
+                dark={1}
+                baseColor="#6c63ff"
                 markerColor="#00d9ff"
-                glowColor={theme === 'dark' ? '#5227FF' : '#7c70ff'}
-                mapBrightness={theme === 'dark' ? 4 : 8}
+                glowColor="#5227FF"
+                mapBrightness={4}
               />
             </div>
 
-            {/* Labels flutuantes — dentro do globo, sem overflow */}
+            {/* Labels flutuantes — CSS puro (zero Framer Motion por frame) */}
             {[
-              { label: 'React',   style: { top: '6%',  right: '4%'  } },
-              { label: 'Node.js', style: { top: '36%', left: '2%'   } },
-              { label: 'Kotlin',  style: { top: '60%', right: '4%'  } },
-              { label: 'iOS',     style: { top: '76%', left: '4%'   } },
-            ].map(({ label, style }, i) => (
-              <motion.div
+              { label: 'React',   style: { top: '6%',  right: '4%'  }, delay: '0s'    },
+              { label: 'Node.js', style: { top: '36%', left: '2%'   }, delay: '0.5s'  },
+              { label: 'Kotlin',  style: { top: '60%', right: '4%'  }, delay: '1s'    },
+              { label: 'iOS',     style: { top: '76%', left: '4%'   }, delay: '1.5s'  },
+            ].map(({ label, style, delay }) => (
+              <div
                 key={label}
-                className="absolute px-3 py-1 rounded-full text-sm font-bold glass"
-                style={{ color: 'var(--primary)', zIndex: 20, pointerEvents: 'none', whiteSpace: 'nowrap', ...style }}
-                animate={{ y: [0, -6, 0], opacity: [0.8, 1, 0.8] }}
-                transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.4 }}
+                className="absolute px-3 py-1 rounded-full text-sm font-bold glass hero-label-float"
+                style={{ color: 'var(--primary)', zIndex: 20, pointerEvents: 'none', whiteSpace: 'nowrap', animationDelay: delay, ...style }}
               >
                 {label}
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -206,9 +194,9 @@ export default function Hero() {
         style={{ color: 'var(--text-muted)' }}
       >
         <span className="text-xs font-medium">Scroll</span>
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+        <div style={{ animation: 'scrollBounce 1.5s ease-in-out infinite' }}>
           <ChevronDown size={20} />
-        </motion.div>
+        </div>
       </motion.button>
     </section>
   );

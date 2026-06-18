@@ -3,10 +3,12 @@ import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
+const DevLearn  = lazy(() => import('./pages/DevLearn'));
 const Stats     = lazy(() => import('./components/Stats'));
 const Skills    = lazy(() => import('./components/Skills'));
 const Experience = lazy(() => import('./components/Experience'));
 const Projects  = lazy(() => import('./components/Projects'));
+const Contact   = lazy(() => import('./components/Contact'));
 const Footer    = lazy(() => import('./components/Footer'));
 
 const Loader = () => (
@@ -16,6 +18,16 @@ const Loader = () => (
 );
 
 function App() {
+  // Roteamento simples sem react-router
+  const path = typeof window !== 'undefined' ? window.location.pathname : '/';
+  if (path === '/develope' || path === '/develope/') {
+    return (
+      <Suspense fallback={<Loader />}>
+        <DevLearn />
+      </Suspense>
+    );
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)', overflowX: 'clip' }}>
       <Navbar />
@@ -26,6 +38,7 @@ function App() {
           <Skills />
           <Experience />
           <Projects />
+          <Contact />
         </Suspense>
       </main>
       <Suspense fallback={null}>

@@ -78,7 +78,7 @@ const iconMap = {
 
 export default function Contact() {
   const headerRef = useRef(null);
-  const isHeaderVisible = useInView(headerRef, { once: true });
+  const isHeaderVisible = useInView(headerRef, { once: true, margin: '-60px' });
 
   return (
     <section id="contact" className="py-24 px-4 relative overflow-hidden">

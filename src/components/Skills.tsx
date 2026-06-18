@@ -30,20 +30,20 @@ const IntroAnimation = ({ name, SVG, color, onComplete }: { name: string; SVG: R
       style={{ background: `radial-gradient(circle at center, ${color}22 0%, transparent 70%)`, zIndex: 20 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: [0, 1, 1, 0] }}
-      transition={{ duration: 2.2, times: [0, 0.2, 0.8, 1] }}
+      transition={{ duration: 1.4, times: [0, 0.2, 0.75, 1] }}
       onAnimationComplete={onComplete}
     >
       <motion.div
-        initial={{ scale: 0.3, rotate: -180, opacity: 0 }}
-        animate={{ scale: [0.3, 1.4, 1], rotate: [180, 0], opacity: [0, 1, 1] }}
-        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ scale: 0.4, rotate: -120, opacity: 0 }}
+        animate={{ scale: [0.4, 1.2, 1], rotate: [120, 0], opacity: [0, 1, 1] }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
       >
-        <SVG size={72} />
+        <SVG size={64} />
       </motion.div>
       <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: [0, 1, 1, 0], y: [10, 0, 0, -5] }}
-        transition={{ duration: 2, delay: 0.4 }}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: [0, 1, 1, 0], y: [8, 0, 0, -4] }}
+        transition={{ duration: 1.2, delay: 0.2 }}
         className="mt-3 font-bold text-lg"
         style={{ color }}
       >
@@ -55,20 +55,24 @@ const IntroAnimation = ({ name, SVG, color, onComplete }: { name: string; SVG: R
 
 const TechCard = ({ tech, index }: { tech: typeof techs[0]; index: number }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-60px' });
+  // margin negativo maior: só anima quando o card está bem visível na tela
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
   const [showIntro, setShowIntro] = useState(true);
   const [introPlayed, setIntroPlayed] = useState(false);
+  // Stagger controlado: cada card espera o anterior terminar (~2.2s) antes de começar
+  // Mas limitamos a no máximo 4 por "coluna" visível — cálculo por posição na grid
+  const staggerDelay = (index % 4) * 0.18; // delay dentro da linha visível, não acumula infinitamente
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 60, scale: 0.9 }}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.7, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, delay: staggerDelay, ease: [0.22, 1, 0.36, 1] }}
       className="tech-card rounded-2xl p-5 cursor-pointer relative overflow-hidden gradient-border"
       style={{ minHeight: '160px' }}
     >
-      {/* Intro cinematic animation */}
+      {/* Intro cinematic animation — só roda quando o card está na view E já passou o delay */}
       <AnimatePresence>
         {isInView && showIntro && !introPlayed && (
           <IntroAnimation
@@ -118,7 +122,7 @@ const TechCard = ({ tech, index }: { tech: typeof techs[0]; index: number }) => 
 
 export default function Skills() {
   const headerRef = useRef(null);
-  const isHeaderVisible = useInView(headerRef, { once: true });
+  const isHeaderVisible = useInView(headerRef, { once: true, margin: '-60px' });
 
   return (
     <section id="skills" className="py-24 px-4 relative overflow-hidden">

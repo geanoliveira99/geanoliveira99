@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Instagram, MessageCircle, Mail, X, Github } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { Instagram, MessageCircle, Mail, X, Github } from 'lucide-react';
 import MiniGame from './ui/MiniGame';
 
 // SVGs animados por seção
@@ -70,11 +69,23 @@ function IconCode() {
   );
 }
 
+function IconMail() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="4" width="20" height="16" rx="3" stroke="var(--accent)" strokeWidth="1.5" />
+      <path d="M2 8l10 6 10-6" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round">
+        <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  );
+}
+
 const navLinks = [
   { label: 'Início',      href: '#hero',       Icon: IconGlobe  },
   { label: 'Habilidades', href: '#skills',      Icon: IconBolt   },
   { label: 'Experiência', href: '#experience',  Icon: IconRocket },
   { label: 'Projetos',    href: '#projects',    Icon: IconCode   },
+  { label: 'Contato',     href: '#contact',     Icon: IconMail   },
 ];
 
 // Orbital dots menu button
@@ -108,10 +119,49 @@ function OrbitMenuButton({ isOpen, onClick }: { isOpen: boolean; onClick: () => 
   );
 }
 
+// ── Hook: nome digita → fica 3s → apaga → fica 2s → repete ──
+const FULL_NAME = 'Gean Oliveira';
+function useNameTypewriter() {
+  // phase: 'typing' | 'visible' | 'erasing' | 'hidden'
+  const [displayed, setDisplayed] = useState('');
+  const [phase, setPhase]         = useState<'typing' | 'visible' | 'erasing' | 'hidden'>('typing');
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const clear = () => { if (timerRef.current) clearTimeout(timerRef.current); };
+
+    if (phase === 'typing') {
+      if (displayed.length < FULL_NAME.length) {
+        timerRef.current = setTimeout(() =>
+          setDisplayed(FULL_NAME.slice(0, displayed.length + 1)), 75);
+      } else {
+        timerRef.current = setTimeout(() => setPhase('visible'), 3000);
+      }
+    } else if (phase === 'visible') {
+      // já aguardou 3s, começa a apagar
+      setPhase('erasing');
+    } else if (phase === 'erasing') {
+      if (displayed.length > 0) {
+        timerRef.current = setTimeout(() =>
+          setDisplayed(displayed.slice(0, -1)), 45);
+      } else {
+        timerRef.current = setTimeout(() => setPhase('hidden'), 2000);
+      }
+    } else if (phase === 'hidden') {
+      // aguardou 2s recolhido, volta a digitar
+      setPhase('typing');
+    }
+
+    return clear;
+  }, [phase, displayed]);
+
+  return displayed;
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const nameDisplayed = useNameTypewriter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -159,24 +209,50 @@ export default function Navbar() {
               >
                 <span className="text-white font-black text-sm">GO</span>
               </div>
-              {/* Liquid glass name — always visible */}
-              <span
-                className="font-black text-base tracking-tight"
-                style={{
-                  background: 'rgba(108,99,255,0.18)',
-                  backdropFilter: 'blur(16px) saturate(180%)',
-                  WebkitBackdropFilter: 'blur(16px) saturate(180%)',
-                  border: '1px solid rgba(108,99,255,0.45)',
-                  borderRadius: '12px',
-                  padding: '4px 12px',
-                  color: '#ffffff',
-                  letterSpacing: '-0.01em',
-                  textShadow: '0 0 12px rgba(108,99,255,0.7)',
-                  boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(108,99,255,0.25)',
-                }}
-              >
-                Gean Oliveira
-              </span>
+              {/* Nome animado — digita, fica 3s, apaga, fica 2s, repete */}
+              <AnimatePresence mode="wait">
+                {nameDisplayed.length > 0 && (
+                  <motion.span
+                    key="name"
+                    initial={{ opacity: 0, width: 0, paddingLeft: 0, paddingRight: 0 }}
+                    animate={{ opacity: 1, width: 'auto', paddingLeft: 12, paddingRight: 12 }}
+                    exit={{ opacity: 0, width: 0, paddingLeft: 0, paddingRight: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="font-black text-base tracking-tight overflow-hidden whitespace-nowrap"
+                    style={{
+                      background: 'rgba(108,99,255,0.18)',
+                      backdropFilter: 'blur(16px) saturate(180%)',
+                      WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+                      border: '1px solid rgba(108,99,255,0.45)',
+                      borderRadius: '12px',
+                      paddingTop: '4px',
+                      paddingBottom: '4px',
+                      color: '#ffffff',
+                      letterSpacing: '-0.01em',
+                      textShadow: '0 0 12px rgba(108,99,255,0.7)',
+                      boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15), 0 2px 12px rgba(108,99,255,0.25)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 2,
+                    }}
+                  >
+                    {nameDisplayed}
+                    {/* cursor piscando enquanto digita */}
+                    <span
+                      style={{
+                        display: 'inline-block',
+                        width: '2px',
+                        height: '14px',
+                        background: 'var(--secondary)',
+                        borderRadius: 1,
+                        marginLeft: 2,
+                        animation: 'blink 0.7s step-end infinite',
+                        verticalAlign: 'middle',
+                      }}
+                    />
+                  </motion.span>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             {/* Desktop nav */}
@@ -211,6 +287,21 @@ export default function Navbar() {
                 >
                   <Github size={15} />
                 </motion.a>
+                {/* Ícone DevLearn — abre área de aprendizado */}
+                <motion.a
+                  whileHover={{ scale: 1.18, rotate: -6 }}
+                  whileTap={{ scale: 0.9 }}
+                  href="/develope"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-all duration-300"
+                  style={{ background: 'rgba(255,180,0,0.13)', border: '1px solid rgba(255,180,0,0.25)' }}
+                  title="Aprenda HTML, CSS e JavaScript"
+                >
+                  <img
+                    src="/develope.svg"
+                    alt="DevLearn"
+                    style={{ width: 20, height: 20, objectFit: 'contain', display: 'block' }}
+                  />
+                </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.15, rotate: 5 }}
                   href="https://www.instagram.com/geanoliveira99/"
@@ -243,17 +334,6 @@ export default function Navbar() {
                   <Mail size={15} />
                 </motion.a>
               </div>
-
-              {/* Theme toggle */}
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={toggleTheme}
-                className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300"
-                style={{ background: 'linear-gradient(135deg, var(--primary), var(--secondary))', color: '#fff', border: 'none' }}
-              >
-                {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-              </motion.button>
 
               {/* Hamburger */}
               <OrbitMenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />

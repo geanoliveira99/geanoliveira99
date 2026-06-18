@@ -31,15 +31,15 @@ export default function Stats() {
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="text-center p-5 rounded-2xl"
               style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
             >
               <div className="text-3xl sm:text-4xl font-black mb-1" style={{ color: stat.color }}>
                 {isInView ? (
-                  <CountUp value={stat.value} suffix={stat.suffix} duration={2} />
+                  <CountUp value={stat.value} suffix={stat.suffix} duration={1.6} />
                 ) : (
                   <span>0{stat.suffix}</span>
                 )}
