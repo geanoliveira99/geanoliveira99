@@ -1,276 +1,183 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=6C63FF&center=true&vCenter=true&width=700&lines=Ol%C3%A1%2C+eu+sou+Gean+Oliveira+%F0%9F%91%8B;React+%7C+Node.js+%7C+Mobile+Dev;Android+%26+iOS+Developer;Kotlin+%7C+Capacitor+%7C+WebView;ERP+Sankhya+%7C+Oracle+%7C+MySQL;Dispon%C3%ADvel+para+Projetos+%F0%9F%9A%80)](https://git.io/typing-svg)
+<img src="./vscode-profile.svg" alt="Gean Oliveira - VS Code Profile" width="900"/>
 
-<br/>
-
-[![Instagram](https://img.shields.io/badge/@geanoliveira99-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/geanoliveira99/)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5568981108001)
-[![Gmail](https://img.shields.io/badge/geansnswatch@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:geansnswatch@gmail.com)
-[![Location](https://img.shields.io/badge/%2C_Brasil_🇧🇷-0D1117?style=for-the-badge&logo=googlemaps&logoColor=white)](https://www.google.com/maps/place/Acre)
-
-<br/>
-
-![Status](https://img.shields.io/badge/Status-Disponível_para_Projetos_🟢-6C63FF?style=for-the-badge)
-
-</div>
-
----
-
-<!-- Marquee infinito de tecnologias -->
-<div align="center">
-<img src="linguagensprogramacao.gif" width="100%" style="display:block" alt="Marquee de tecnologias"/>
 </div>
 
 ---
 
 <div align="center">
 
-### 🐍 Snake comendo minhas contribuições...
+<a href="https://www.instagram.com/geanoliveira99/">
+  <img src="https://img.shields.io/badge/@geanoliveira99-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+<a href="https://wa.me/5568981108001">
+  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+</a>
+<a href="mailto:geansnswatch@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+<a href="https://www.google.com/maps/place/Acre">
+  <img src="https://img.shields.io/badge/Brasil-009C3B?style=for-the-badge&logo=googlemaps&logoColor=white" />
+</a>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/geanoliveira99/geanoliveira99/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/geanoliveira99/geanoliveira99/output/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/geanoliveira99/geanoliveira99/output/github-contribution-grid-snake-dark.svg" />
-</picture>
+<br/><br/>
+
+[![Status](https://img.shields.io/badge/Status-Disponivel_para_Projetos-6C63FF?style=for-the-badge)](https://github.com/geanoliveira99)
 
 </div>
 
 ---
 
-## 👨‍💻 Sobre Mim
+## Snake comendo minhas contribuicoes...
 
-```typescript
+![github-snake](https://raw.githubusercontent.com/geanoliveira99/geanoliveira99/output/github-contribution-grid-snake-dark.svg)
+
+---
+
+## Sobre Mim
+
+```json
 const gean = {
   nome:       "Gean Oliveira",
-  localidade: "Brasil 🇧🇷",
+  localidade: "Brasil",
   atual:      "Full Stack Developer & Mobile Developer",
   foco:       ["React", "Node.js", "Android", "iOS", "Kotlin"],
   desde:      2024,
-  hobbies:    ["Código limpo ✨", "Apps Mobile 📱", "ERP & Banco de Dados 🗄️"],
+  hobbies:    ["Codigo limpo", "Apps Mobile", "ERP & Banco de Dados"],
   contato:    "geansnswatch@gmail.com",
 };
 ```
 
 ---
 
-## 🛠️ Stack de Tecnologias
+## Stack de Tecnologias
+
+![Skills](https://skillicons.dev/icons?i=react,ts,tailwind,vite,nodejs,express,androidstudio,kotlin,apple,mysql,oracle,git,github,vscode,vercel&theme=dark)
+
+---
+
+## Experiencia Profissional
+
+<details>
+<summary><b>React Developer - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| SPAs & Dashboards | Hooks modernos, Context API e React Query |
+| UI/UX Moderno | Framer Motion, Tailwind CSS e TypeScript |
+| Deploy & CI/CD | Vercel com pipelines integrados |
+| Componentes | Design system proprio com TypeScript |
+</details>
+
+<details>
+<summary><b>Node.js Backend - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| APIs REST | Endpoints e middleware com Express.js |
+| Banco de Dados | Integracao com SQL e NoSQL |
+| Autenticacao | JWT, OAuth e controle de sessao |
+| Deploy | Servidores VPS e cloud |
+</details>
+
+<details>
+<summary><b>Android Developer - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| Android Studio | Desenvolvimento nativo com Kotlin |
+| APK Signing | Assinatura com chave Google Console |
+| Google Play | Publicacao e gerenciamento de versoes |
+| Apps Hibridos | WebView e Capacitor cross-platform |
+</details>
+
+<details>
+<summary><b>iOS Developer - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| Xcode | Desenvolvimento com simuladores iOS/iPadOS |
+| Capacitor | Build iOS com bridge nativa |
+| TestFlight | Testes beta e distribuicao interna |
+| App Store | Preparacao de apps para publicacao |
+</details>
+
+<details>
+<summary><b>Kotlin Nativo - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| Ciclo de Vida | Apps Kotlin com arquitetura Android moderna |
+| Jetpack Compose | UI declarativa com composables |
+| Room + ViewModel | Persistencia local e estado |
+| Integracao | APIs externas com Retrofit/Ktor |
+</details>
+
+<details>
+<summary><b>Oracle SQL - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| Queries Complexas | Joins, subqueries, CTEs e window functions |
+| PL/SQL | Procedures, functions e packages |
+| Performance | Otimizacao de indices |
+| Integracao | Conexao com ERP Sankhya via Oracle |
+</details>
+
+<details>
+<summary><b>MySQL - Abr 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| Modelagem | Normalizacao e relacionamentos |
+| Otimizacao | Indices, EXPLAIN e queries performaticas |
+| Procedures | Stored procedures e triggers |
+| Node.js + ORM | Integracao com Sequelize e REST |
+</details>
+
+<details>
+<summary><b>GitHub Copilot - 2024 - Atual</b></summary>
+<br/>
+
+| Area | Descricao |
+|------|-----------|
+| Copilot Inline | Uso diario no VS Code |
+| Copilot Chat | Revisao e debugging com IA |
+| Testes com IA | Geracao automatica de testes |
+| Documentacao | Refactoring assistido por IA |
+</details>
+
+---
+
+## Estatisticas do GitHub
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=react,ts,tailwind,vite,nodejs,express,androidstudio,kotlin,apple,mysql,oracle,git,github,vscode,vercel&theme=dark&perline=8" />
+![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=geanoliveira99&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true)
+
+![Top Langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=geanoliveira99&layout=compact&langs_count=7&theme=tokyonight)
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=geanoliveira99&theme=tokyonight)](https://git.io/streak-stats)
 
 </div>
 
 ---
 
-## 🚀 Experiência Profissional
+## Grafico de Atividade
 
-<details open>
-<summary><img src="https://skillicons.dev/icons?i=react&theme=dark" width="20"/> &nbsp;<b>React Developer — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="https://skillicons.dev/icons?i=react&theme=dark" width="16"/> **SPAs & Dashboards** | Hooks modernos, Context API e React Query |
-| <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" width="16"/> **UI/UX Moderno** | Framer Motion, Tailwind CSS e componentes reutilizáveis com TypeScript |
-| <img src="https://skillicons.dev/icons?i=vercel&theme=dark" width="16"/> **Deploy & CI/CD** | Vercel com pipelines integrados e deploys automáticos |
-| <img src="https://skillicons.dev/icons?i=ts&theme=dark" width="16"/> **Componentes** | Design system próprio com TypeScript tipado end-to-end |
-
-</details>
-
----
-
-<details open>
-<summary><img src="https://skillicons.dev/icons?i=nodejs&theme=dark" width="20"/> &nbsp;<b>Node.js Backend — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="https://skillicons.dev/icons?i=express&theme=dark" width="16"/> **APIs REST** | Construção de endpoints e middleware com Express.js |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Banco de Dados** | Integração com bancos SQL e NoSQL |
-| <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" width="16"/> **Autenticação** | JWT, OAuth e controle de sessão seguro |
-| <img src="https://skillicons.dev/icons?i=linux&theme=dark" width="16"/> **Deploy** | Servidores VPS e cloud |
-
-</details>
-
----
-
-<details open>
-<summary><img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="20"/> &nbsp;<b>Android Developer — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Android Studio** | Desenvolvimento nativo com Kotlin |
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **APK Signing** | Assinatura com chave de conta Google Console |
-| <img src="https://skillicons.dev/icons?i=androidstudio&theme=dark" width="16"/> **Google Play** | Publicação, atualizações e gerenciamento de versões |
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **Apps Híbridos** | WebView e Capacitor para apps cross-platform |
-
-</details>
-
----
-
-<details open>
-<summary><img src="xcode.png" height="20"/> &nbsp;<b>iOS Developer — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="xcode.png" height="16"/> **Xcode** | Desenvolvimento com simuladores iOS/iPadOS |
-| <img src="xcode.png" height="16"/> **Capacitor** | Build iOS de apps web com bridge nativa |
-| <img src="xcode.png" height="16"/> **TestFlight** | Testes beta e distribuição interna |
-| <img src="xcode.png" height="16"/> **App Store** | Preparação de apps para publicação |
-
-</details>
-
----
-
-<details open>
-<summary><img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="20"/> &nbsp;<b>Kotlin Nativo — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **Ciclo de Vida** | Apps Kotlin com arquitetura Android moderna |
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **Jetpack Compose** | UI declarativa com composables |
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **Room + ViewModel** | Persistência local e gerenciamento de estado |
-| <img src="https://skillicons.dev/icons?i=kotlin&theme=dark" width="16"/> **Integração** | Consumo de APIs externas com Retrofit/Ktor |
-
-</details>
-
----
-
-<details open>
-<summary><img src="capacitor.svg" height="20"/> &nbsp;<b>Capacitor / WebView — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="capacitor.svg" height="16"/> **Apps Híbridos** | Capacitor para Android e iOS com uma só base de código |
-| <img src="capacitor.svg" height="16"/> **Bridge JS/Native** | Acesso a funcionalidades nativas via JavaScript |
-| <img src="capacitor.svg" height="16"/> **Plugins Custom** | Câmera, GPS, notificações push customizadas |
-| <img src="capacitor.svg" height="16"/> **Build & Signing** | Geração e assinatura para ambas as plataformas |
-
-</details>
-
----
-
-<details open>
-<summary><img src="googleplayconsole.jpg" height="20"/> &nbsp;<b>Google Play Console — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="googleplayconsole.jpg" height="16"/> **Assinatura** | Geração e gestão de chave APK/AAB |
-| <img src="googleplayconsole.jpg" height="16"/> **Publicação** | Upload, review e publicação de apps |
-| <img src="googleplayconsole.jpg" height="16"/> **Versões** | Gerenciamento de versões e rollouts graduais |
-| <img src="googleplayconsole.jpg" height="16"/> **Tracks** | Alpha, Beta e Produção |
-
-</details>
-
----
-
-<details open>
-<summary><img src="sankhya.png" height="20"/> &nbsp;<b>ERP Sankhya — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="sankhya.png" height="16"/> **Customizações** | Telas personalizadas no Sankhya Navegador |
-| <img src="sankhya.png" height="16"/> **Relatórios** | Geração e personalização de relatórios |
-| <img src="sankhya.png" height="16"/> **API Sankhya** | Integração via API REST do Sankhya |
-| <img src="sankhya.png" height="16"/> **Suporte** | Atendimento a usuários e implantação do sistema |
-
-</details>
-
----
-
-<details open>
-<summary><img src="https://skillicons.dev/icons?i=github&theme=dark" width="20"/> &nbsp;<b>GitHub Copilot — 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="https://skillicons.dev/icons?i=github&theme=dark" width="16"/> **Copilot Inline** | Uso diário no VS Code para autocompletar inteligente |
-| <img src="https://skillicons.dev/icons?i=github&theme=dark" width="16"/> **Copilot Chat** | Revisão de código e debugging assistido por IA |
-| <img src="https://skillicons.dev/icons?i=github&theme=dark" width="16"/> **Testes com IA** | Geração automática de testes unitários |
-| <img src="https://skillicons.dev/icons?i=github&theme=dark" width="16"/> **Documentação** | Refactoring e documentação assistidos por IA |
-
-</details>
-
----
-
-<details open>
-<summary><img src="oracle.png" height="20"/> &nbsp;<b>Oracle SQL — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="oracle.png" height="16"/> **Queries Complexas** | Joins, subqueries, CTEs e window functions |
-| <img src="oracle.png" height="16"/> **PL/SQL** | Procedures, functions e packages |
-| <img src="oracle.png" height="16"/> **Performance** | Otimização de índices e planos de execução |
-| <img src="oracle.png" height="16"/> **Integração** | Conexão direta com ERP Sankhya via Oracle |
-
-</details>
-
----
-
-<details open>
-<summary><img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="20"/> &nbsp;<b>MySQL — Abr 2024 – Atual</b></summary>
-<br/>
-
-| | |
-|:---|:---|
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Modelagem** | Normalização de tabelas e relacionamentos |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Otimização** | Índices, EXPLAIN e queries performáticas |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Procedures** | Stored procedures e triggers |
-| <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="16"/> **Node.js + ORM** | Integração com Sequelize e APIs REST |
-
-</details>
-
----
-
-## 📊 Estatísticas do GitHub
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=geanoliveira99&theme=tokyo-night)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api?username=geanoliveira99&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=6c63ff&icon_color=00d9ff&text_color=ffffff"/>
-&nbsp;
-<img height="180em" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=geanoliveira99&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=6c63ff&text_color=ffffff"/>
-
-</div>
-
-<div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=geanoliveira99&theme=tokyonight-duo&hide_border=true&background=0D1117&ring=6C63FF&fire=FF6B6B&currStreakLabel=00D9FF)](https://git.io/streak-stats)
-
-</div>
-
----
-
-## 🏆 Conquistas
-
-<div align="center">
-
-![](https://img.shields.io/badge/🚀_Primeiro_Commit-6C63FF?style=for-the-badge)
-![](https://img.shields.io/badge/📱_App_na_Play_Store-3DDC84?style=for-the-badge)
-![](https://img.shields.io/badge/🍎_App_na_App_Store-000000?style=for-the-badge)
-![](https://img.shields.io/badge/⚛️_React_Developer-61DAFB?style=for-the-badge&logoColor=black)
-![](https://img.shields.io/badge/🤖_Kotlin_Native-0095D5?style=for-the-badge)
-![](https://img.shields.io/badge/🗄️_Oracle_SQL-F80000?style=for-the-badge)
-![](https://img.shields.io/badge/🤖_GitHub_Copilot_User-000000?style=for-the-badge&logo=githubcopilot)
-![](https://img.shields.io/badge/☁️_Deploy_na_Vercel-000000?style=for-the-badge&logo=vercel)
-
-</div>
-
----
-
-## 📈 Gráfico de Atividade
-
-<div align="center">
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=geanoliveira99&bg_color=0d1117&color=6c63ff&line=00d9ff&point=ff6b6b&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Visitor Count](https://komarev.com/ghpvc/?username=geanoliveira99&color=6c63ff&style=for-the-badge&label=VISITAS+AO+PERFIL)](https://github.com/geanoliveira99)
 
 </div>
 
@@ -278,14 +185,16 @@ const gean = {
 
 <div align="center">
 
-![Visitor Count](https://komarev.com/ghpvc/?username=geanoliveira99&color=6c63ff&style=for-the-badge&label=VISITAS+AO+PERFIL)
+**Obrigado pela visita! Bora codar juntos?**
 
-<br/>
-
-**✨ Obrigado pela visita! Bora codar juntos? 🚀**
-
-[![Instagram](https://img.shields.io/badge/@geanoliveira99-E1306C?style=flat-square&logo=instagram&logoColor=white)](https://www.instagram.com/geanoliveira99/)
-[![WhatsApp](https://img.shields.io/badge/Falar_no_WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/5568981108001)
-[![Email](https://img.shields.io/badge/Enviar_Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:geansnswatch@gmail.com)
+<a href="https://www.instagram.com/geanoliveira99/">
+  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+<a href="https://wa.me/5568981108001">
+  <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
+</a>
+<a href="mailto:geansnswatch@gmail.com">
+  <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
 
 </div>

@@ -1,0 +1,200 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      text { font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Courier New', monospace; }
+      .tl { opacity: 0; }
+      .t1 { animation: t1a 22s ease infinite; }
+      .t2 { animation: t2a 22s ease infinite; }
+      .t3 { animation: t3a 22s ease infinite; }
+      .t4 { animation: t4a 22s ease infinite; }
+      .t5 { animation: t5a 22s ease infinite; }
+      .t6 { animation: t6a 22s ease infinite; }
+      .cur { animation: blink 0.9s step-end infinite, cura 22s ease infinite; opacity: 0; }
+      @keyframes t1a  { 0%,3%  {opacity:0} 5%,86%  {opacity:1} 88%,100% {opacity:0} }
+      @keyframes t2a  { 0%,8%  {opacity:0} 10%,86% {opacity:1} 88%,100% {opacity:0} }
+      @keyframes t3a  { 0%,13% {opacity:0} 15%,86% {opacity:1} 88%,100% {opacity:0} }
+      @keyframes t4a  { 0%,18% {opacity:0} 20%,86% {opacity:1} 88%,100% {opacity:0} }
+      @keyframes t5a  { 0%,24% {opacity:0} 26%,86% {opacity:1} 88%,100% {opacity:0} }
+      @keyframes t6a  { 0%,30% {opacity:0} 32%,86% {opacity:1} 88%,100% {opacity:0} }
+      @keyframes cura { 0%,32% {opacity:0} 34%,86% {opacity:1} 88%,100% {opacity:0} }
+      @keyframes blink { 0%,100% {opacity:1} 50% {opacity:0} }
+    </style>
+  </defs>
+
+  <!-- Window background -->
+  <rect width="900" height="520" fill="#0b1729" rx="10"/>
+
+  <!-- ===== TITLE BAR ===== -->
+  <rect width="900" height="28" fill="#060e1c" rx="10"/>
+  <rect y="18" width="900" height="10" fill="#060e1c"/>
+  <circle cx="16" cy="14" r="6" fill="#ff5f57"/>
+  <circle cx="34" cy="14" r="6" fill="#febc2e"/>
+  <circle cx="52" cy="14" r="6" fill="#28c840"/>
+  <text x="450" y="18" text-anchor="middle" fill="#3a5a7a" font-size="11">geanoliveira99 — Visual Studio Code</text>
+
+  <!-- ===== TAB BAR ===== -->
+  <rect x="0" y="28" width="900" height="36" fill="#081322"/>
+  <rect x="48" y="28" width="118" height="36" fill="#0b1729"/>
+  <text x="64" y="51" fill="#c8d3de" font-size="11">profile.json</text>
+  <rect x="48" y="62" width="118" height="2" fill="#4fc3f7"/>
+  <rect x="166" y="28" width="108" height="36" fill="#081322"/>
+  <text x="180" y="51" fill="#3a5a7a" font-size="11">README.md</text>
+  <rect x="274" y="28" width="92" height="36" fill="#081322"/>
+  <text x="287" y="51" fill="#3a5a7a" font-size="11">skills.ts</text>
+  <rect x="366" y="28" width="122" height="36" fill="#081322"/>
+  <text x="380" y="51" fill="#3a5a7a" font-size="11">experience.md</text>
+  <rect x="488" y="28" width="102" height="36" fill="#081322"/>
+  <text x="502" y="51" fill="#3a5a7a" font-size="11">connect.md</text>
+
+  <!-- ===== ACTIVITY BAR ===== -->
+  <rect x="0" y="64" width="48" height="428" fill="#060e1c"/>
+  <rect x="0" y="70" width="3" height="28" fill="#4fc3f7"/>
+  <rect x="13" y="80" width="22" height="3" fill="#c8d3de" rx="1"/>
+  <rect x="13" y="86" width="22" height="3" fill="#c8d3de" rx="1"/>
+  <rect x="13" y="92" width="22" height="3" fill="#c8d3de" rx="1"/>
+  <circle cx="24" cy="124" r="7" fill="none" stroke="#3a5a7a" stroke-width="2"/>
+  <line x1="29" y1="129" x2="33" y2="133" stroke="#3a5a7a" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="158" r="4" fill="none" stroke="#3a5a7a" stroke-width="1.5"/>
+  <line x1="24" y1="154" x2="24" y2="146" stroke="#3a5a7a" stroke-width="1.5"/>
+  <circle cx="24" cy="144" r="3" fill="none" stroke="#3a5a7a" stroke-width="1.5"/>
+  <line x1="24" y1="162" x2="24" y2="170" stroke="#3a5a7a" stroke-width="1.5"/>
+  <circle cx="24" cy="172" r="3" fill="none" stroke="#3a5a7a" stroke-width="1.5"/>
+  <rect x="17" y="188" width="9" height="9" fill="none" stroke="#3a5a7a" stroke-width="1.5" rx="1"/>
+  <rect x="23" y="182" width="9" height="9" fill="none" stroke="#3a5a7a" stroke-width="1.5" rx="1"/>
+  <circle cx="24" cy="472" r="12" fill="#1565c0"/>
+  <text x="24" y="477" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">G</text>
+
+  <!-- ===== SIDEBAR ===== -->
+  <rect x="48" y="64" width="182" height="428" fill="#091420"/>
+  <text x="58" y="84" fill="#3a5a7a" font-size="10" letter-spacing="1">EXPLORADOR</text>
+  <text x="58" y="104" fill="#4fc3f7" font-size="12">▼ GEANOLIVEIRA99</text>
+  <text x="66" y="122" fill="#e8c15a" font-size="12">▼ about</text>
+  <text x="80" y="138" fill="#c8d3de" font-size="11">  profile.json</text>
+  <text x="80" y="154" fill="#3a5a7a" font-size="11">  README.md</text>
+  <text x="66" y="172" fill="#e8c15a" font-size="12">▶ skills</text>
+  <text x="66" y="190" fill="#e8c15a" font-size="12">▶ experience</text>
+  <text x="66" y="208" fill="#e8c15a" font-size="12">▶ connect</text>
+  <text x="66" y="228" fill="#c8d3de" font-size="11">  LICENSE</text>
+  <text x="66" y="244" fill="#3a5a7a" font-size="11">  .gitignore</text>
+  <text x="58" y="460" fill="#2a4060" font-size="10">⑂ main</text>
+  <text x="58" y="476" fill="#2a4060" font-size="10">geanoliveira99</text>
+  <line x1="230" y1="64" x2="230" y2="492" stroke="#1a2d45" stroke-width="1"/>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <rect x="230" y="64" width="670" height="22" fill="#091420"/>
+  <text x="240" y="78" fill="#3a5a7a" font-size="10">GEANOLIVEIRA99  ›  about  ›  profile.json</text>
+
+  <!-- ===== MAIN EDITOR ===== -->
+  <rect x="230" y="86" width="670" height="258" fill="#0b1729"/>
+  <rect x="230" y="117" width="670" height="16" fill="#0d2040" opacity="0.7"/>
+
+  <text x="248" y="130" fill="#2d4a66" font-size="12">1</text>
+  <text x="270" y="130" fill="#c8d3de" font-size="12">{</text>
+
+  <text x="248" y="146" fill="#2d4a66" font-size="12">2</text>
+  <text x="270" y="146" fill="#82aaff" font-size="12">"nome"</text>
+  <text x="330" y="146" fill="#c8d3de" font-size="12">: </text>
+  <text x="346" y="146" fill="#c3e88d" font-size="12">"Gean Oliveira"</text>
+  <text x="460" y="146" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="248" y="162" fill="#2d4a66" font-size="12">3</text>
+  <text x="270" y="162" fill="#82aaff" font-size="12">"localidade"</text>
+  <text x="366" y="162" fill="#c8d3de" font-size="12">: </text>
+  <text x="382" y="162" fill="#c3e88d" font-size="12">"Brasil"</text>
+  <text x="436" y="162" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="248" y="178" fill="#2d4a66" font-size="12">4</text>
+  <text x="270" y="178" fill="#82aaff" font-size="12">"role"</text>
+  <text x="318" y="178" fill="#c8d3de" font-size="12">: </text>
+  <text x="334" y="178" fill="#c3e88d" font-size="12">"Full Stack &amp; Mobile Developer"</text>
+  <text x="556" y="178" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="248" y="194" fill="#2d4a66" font-size="12">5</text>
+  <text x="270" y="194" fill="#82aaff" font-size="12">"foco"</text>
+  <text x="318" y="194" fill="#c8d3de" font-size="12">: [</text>
+  <text x="342" y="194" fill="#c3e88d" font-size="12">"React"</text>
+  <text x="390" y="194" fill="#c8d3de" font-size="12">, </text>
+  <text x="406" y="194" fill="#c3e88d" font-size="12">"Node.js"</text>
+  <text x="466" y="194" fill="#c8d3de" font-size="12">, </text>
+  <text x="482" y="194" fill="#c3e88d" font-size="12">"Kotlin"</text>
+  <text x="530" y="194" fill="#c8d3de" font-size="12">, </text>
+  <text x="546" y="194" fill="#c3e88d" font-size="12">"Android"</text>
+  <text x="606" y="194" fill="#c8d3de" font-size="12">],</text>
+
+  <text x="248" y="210" fill="#2d4a66" font-size="12">6</text>
+  <text x="270" y="210" fill="#82aaff" font-size="12">"empresa"</text>
+  <text x="342" y="210" fill="#c8d3de" font-size="12">: </text>
+  <text x="358" y="210" fill="#c3e88d" font-size="12">"Dom Porquito Agroindustrial"</text>
+  <text x="574" y="210" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="248" y="226" fill="#2d4a66" font-size="12">7</text>
+  <text x="270" y="226" fill="#82aaff" font-size="12">"desde"</text>
+  <text x="330" y="226" fill="#c8d3de" font-size="12">: </text>
+  <text x="346" y="226" fill="#f78c6c" font-size="12">2024</text>
+  <text x="386" y="226" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="248" y="242" fill="#2d4a66" font-size="12">8</text>
+  <text x="270" y="242" fill="#82aaff" font-size="12">"contato"</text>
+  <text x="342" y="242" fill="#c8d3de" font-size="12">: </text>
+  <text x="358" y="242" fill="#c3e88d" font-size="12">"geansnswatch@gmail.com"</text>
+  <text x="554" y="242" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="248" y="258" fill="#2d4a66" font-size="12">9</text>
+  <text x="270" y="258" fill="#82aaff" font-size="12">"status"</text>
+  <text x="330" y="258" fill="#c8d3de" font-size="12">: </text>
+  <text x="346" y="258" fill="#c3e88d" font-size="12">"Disponivel para Projetos"</text>
+  <text x="538" y="258" fill="#c8d3de" font-size="12">,</text>
+
+  <text x="240" y="274" fill="#2d4a66" font-size="12">10</text>
+  <text x="270" y="274" fill="#82aaff" font-size="12">"openToWork"</text>
+  <text x="378" y="274" fill="#c8d3de" font-size="12">: </text>
+  <text x="394" y="274" fill="#ff5370" font-size="12">true</text>
+
+  <text x="240" y="290" fill="#2d4a66" font-size="12">11</text>
+  <text x="270" y="290" fill="#c8d3de" font-size="12">}</text>
+
+  <!-- Minimap -->
+  <rect x="862" y="86" width="38" height="258" fill="#091420" opacity="0.8"/>
+  <rect x="866" y="92" width="28" height="2" fill="#3a5a7a" rx="1" opacity="0.5"/>
+  <rect x="866" y="100" width="22" height="2" fill="#82aaff" rx="1" opacity="0.4"/>
+  <rect x="866" y="108" width="26" height="2" fill="#c3e88d" rx="1" opacity="0.4"/>
+  <rect x="866" y="116" width="20" height="2" fill="#c3e88d" rx="1" opacity="0.4"/>
+  <rect x="866" y="124" width="28" height="2" fill="#3a5a7a" rx="1" opacity="0.5"/>
+  <rect x="866" y="132" width="24" height="2" fill="#82aaff" rx="1" opacity="0.4"/>
+  <rect x="862" y="108" width="38" height="32" fill="#1a3060" opacity="0.25" rx="1"/>
+
+  <!-- ===== TERMINAL DIVIDER ===== -->
+  <line x1="230" y1="344" x2="900" y2="344" stroke="#1a2d45" stroke-width="1"/>
+
+  <!-- ===== TERMINAL PANEL ===== -->
+  <rect x="230" y="344" width="670" height="148" fill="#091420"/>
+  <rect x="230" y="344" width="670" height="30" fill="#07101e"/>
+  <text x="244" y="364" fill="#3a5a7a" font-size="11">PROBLEMS</text>
+  <text x="324" y="364" fill="#3a5a7a" font-size="11">OUTPUT</text>
+  <text x="384" y="364" fill="#3a5a7a" font-size="11">DEBUG CONSOLE</text>
+  <text x="494" y="364" fill="#c8d3de" font-size="11">TERMINAL  1</text>
+  <rect x="494" y="373" width="76" height="2" fill="#4fc3f7"/>
+  <text x="584" y="364" fill="#3a5a7a" font-size="11">PORTS</text>
+
+  <!-- Terminal content -->
+  <rect x="230" y="374" width="670" height="118" fill="#091420"/>
+
+  <text class="tl t1" x="244" y="390" fill="#3a5a7a" font-size="11">Last login: Wed, 08 Jul 2026 20:13:58 GMT on ttys001</text>
+  <text class="tl t2" x="244" y="406" fill="#4fc3f7" font-size="11">➜  ~/geanoliveira99 <tspan fill="#c792ea">(main)</tspan><tspan fill="#c8d3de">  whoami</tspan></text>
+  <text class="tl t3" x="244" y="422" fill="#c3e88d" font-size="11">gean oliveira</text>
+  <text class="tl t4" x="244" y="438" fill="#4fc3f7" font-size="11">➜  ~/geanoliveira99 <tspan fill="#c792ea">(main)</tspan><tspan fill="#c8d3de">  cat sobre.txt</tspan></text>
+  <text class="tl t5" x="244" y="454" fill="#c8d3de" font-size="11">Full Stack &amp; Mobile Developer | React · Node.js · Kotlin · Android · iOS</text>
+  <text class="tl t6" x="244" y="470" fill="#4fc3f7" font-size="11">➜  ~/geanoliveira99 <tspan fill="#c792ea">(main)</tspan></text>
+  <rect class="cur" x="388" y="459" width="7" height="12" fill="#c8d3de" rx="1"/>
+
+  <!-- ===== STATUS BAR ===== -->
+  <rect x="0" y="492" width="900" height="28" fill="#0d3a8a"/>
+  <rect x="0" y="492" width="28" height="28" fill="#1565c0"/>
+  <text x="8" y="510" fill="#ffffff" font-size="12">≡</text>
+  <text x="34" y="510" fill="#c8d3de" font-size="11">⑂ main</text>
+  <text x="90" y="510" fill="#c8d3de" font-size="11">○ 0 ↓ 0 ↑</text>
+  <text x="660" y="510" fill="#c8d3de" font-size="11">Ln 2, Col 18</text>
+  <text x="748" y="510" fill="#c8d3de" font-size="11">Spaces: 2</text>
+  <text x="818" y="510" fill="#c8d3de" font-size="11">UTF-8</text>
+  <text x="860" y="510" fill="#c8d3de" font-size="11">JSON</text>
+</svg>
