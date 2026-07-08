@@ -2,6 +2,10 @@
 
 <img src="./vscode-profile.svg" alt="Gean Oliveira - VS Code Profile" width="900"/>
 
+<!-- Abas clicáveis → abrem o site interativo na aba certa -->
+<br/>
+<a href="https://geanoliveira99.github.io/?tab=profile"><img src="https://img.shields.io/badge/{ }%20profile.json-0b1729?style=flat-square&labelColor=081322&color=4fc3f7&logoColor=white" /></a>&nbsp;<a href="https://geanoliveira99.github.io/?tab=readme"><img src="https://img.shields.io/badge/M↓%20README.md-0b1729?style=flat-square&labelColor=081322&color=3a5a7a" /></a>&nbsp;<a href="https://geanoliveira99.github.io/?tab=skills"><img src="https://img.shields.io/badge/TS%20skills.ts-0b1729?style=flat-square&labelColor=081322&color=3a5a7a" /></a>&nbsp;<a href="https://geanoliveira99.github.io/?tab=experience"><img src="https://img.shields.io/badge/M↓%20experience.md-0b1729?style=flat-square&labelColor=081322&color=3a5a7a" /></a>&nbsp;<a href="https://geanoliveira99.github.io/?tab=connect"><img src="https://img.shields.io/badge/M↓%20connect.md-0b1729?style=flat-square&labelColor=081322&color=3a5a7a" /></a>
+
 </div>
 
 ---
